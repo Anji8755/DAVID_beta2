@@ -1,0 +1,544 @@
+ 
+SAP IMPLEMENTATION  
+ 
+END USER MANUAL 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+                               CIAL_SAP_IM_EUM_01_Inv Program Definition 
+
+ 
+
+  
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+                ABBREVATIONS 
+
+                    Confidential                                                         1 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATION 
+
+DESCRIPTION 
+
+CIAL 
+
+ 
+
+Cochin International Airport Ltd. 
+
+ 
+
+ 
+
+                CHANGE HISTORY 
+
+Version 
+
+Description 
+
+Created by  Date 
+
+Reviewed by 
+
+Date 
+
+ 
+1.0 
+ 
+
+ 
+Creation of 
+Investment 
+Program 
+Definition  
+ 
+
+ 
+Shiv 
+Shanker 
+
+ 
+19.12.2013 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         2 
+
+ Table of Contents 
+
+ 
+
+1. Creation of Investment Program Definition 
+ 
+ 
+
+4 
+
+                    Confidential                                                         3 
+
+Creation of Investment Program Definition  
+ 
+ 
+ 
+ 
+ 
+
+Overview 
+
+ 
+Trigger:  
+ 
+Perform this procedure when a new Investment Program is required to be created.  
+ 
+ 
+
+Use this procedure to create Investment Program Definition.  
+ 
+
+Business Process Description Overview 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+ 
+ 
+E.g. CIAL2014 
+ 
+ 
+2014 
+ 
+ 
+ZCA1 
+
+ 
+
+ 
+
+ 
+
+  Enter Inv. Program name 
+
+  Enter Approval Year (Ex : 
+
+2014) 
+
+  Program Type: Select 
+
+program type from dropdown 
+list “ZCA1” – CIAL Capital 
+Investment Program Type 
+(Program Type is a master 
+data) 
+ 
+ 
+
+ 
+
+Output - Results 
+
+Comments 
+
+ 
+Inv. Program CIAL2014 created  
+
+ 
+Investment program definition is created. 
+ 
+
+ 
+       Procedural Steps 
+
+         Access the transaction by: 
+
+ 
+
+Via Menus 
+
+Via Transaction Code 
+ 
+
+ IM01 – Create   
+
+Accounting  Financial Accounting 
+Definition 
+ 
+IM01 
+ 
+
+ Programs 
+
+ Investment Program 
+
+                    Confidential                                                         4 
+
+ 
+
+1.  Step 1: Create Investment Program Definition 
+ 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         5 
+
+ 
+
+ 
+
+On screen “Create Inv. Program Definition” enter information in the fields as specified in the table below: 
+
+Field Name 
+
+Description 
+
+R/O/C 
+
+User Action and Values 
+
+Comments 
+
+ 
+
+ 
+Enter program definition 
+as CIAL followed by 
+financial year  
+ 
+ 
+ 
+Approval Year – Always 
+enter  next financial year 
+–E.g.2014 
+ 
+ 
+
+ 
+
+Inv. 
+
+Program 
+
+Approval 
+
+Year 
+
+ 
+ZCAI 
+
+Program 
+
+Type 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+For e.g. CIAL2014 
+ 
+ 
+ 
+
+ 
+E.g. 2014 
+ 
+ 
+ 
+
+ 
+Select program type as 
+“ZCAI“. 
+ 
+ 
+
+ 
+R 
+ 
+ 
+ 
+
+ 
+R 
+ 
+ 
+ 
+ 
+
+ 
+R 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Note: Investment program definition/structure is created every year to plan new proposal for the 
+
+next financial year.  
+
+ 
+
+                    Confidential                                                         6 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+2.  Step 2: Create Investment Program Definition: Second Screen. Enter the details and Save. 
+
+ 
+ 
+On screen “Create Inv. Program Definition” enter information in the fields as specified in the table 
+below: 
+
+ 
+
+ 
+
+ 
+
+Field Name 
+ 
+
+Inv 
+
+Program 
+ 
+ 
+ 
+
+ 
+FI. Year 
+Variant 
+
+ 
+
+ 
+
+ 
+
+Description 
+
+R/O/C 
+
+User Action and Values 
+
+Comments 
+
+ 
+
+ 
+Enter the Long text for 
+Investment Program 
+definition 
+ 
+ 
+ 
+ 
+Financial year variant – 
+(April to March special 
+period )   
+ 
+
+ 
+
+ 
+
+ 
+Enter inv. Program 
+description 
+ 
+ 
+ 
+ 
+ 
+Select variant V3 from the 
+dropdown list. 
+ 
+ 
+
+ 
+O 
+ 
+ 
+ 
+ 
+
+ 
+R 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         7 
+
+ 
+ 
+Currency 
+ 
+
+ 
+ 
+Approval Year – Always 
+enter  next financial year 
+–E.g.2014 
+ 
+ 
+ 
+
+ 
+
+ 
+
+             Select INR from the 
+
+dropdown list. 
+
+ 
+ 
+R 
+ 
+ 
+ 
+
+Comments 
+
+ 
+Investment program definition is created. 
+
+ 
+
+ 
+
+ 
+ 
+ 
+Output - Results 
+
+ 
+Inv. Program CIALPG01 
+created  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         8 
+
+

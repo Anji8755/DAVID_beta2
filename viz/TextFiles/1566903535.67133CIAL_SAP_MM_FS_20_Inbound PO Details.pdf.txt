@@ -1,0 +1,1453 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+CIAL_SAP_MM_FS_20_INBOUND PO DETAILS 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+Dayanandan 
+
+01.04.2014 
+
+1.0 
+
+Created 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 2 of 16                                                                                     TCS – CIAL Confidential 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 3 of 16                                                                                     TCS – CIAL Confidential 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 6 
+
+2.  SCOPE .......................................................................................................................... 7 
+
+2.1 
+
+2.2 
+
+Assumptions ......................................................................................................... 7 
+
+Exclusions ............................................................................................................ 7 
+
+3.  DEVELOPMENT DETAILS ........................................................................................... 7 
+
+3.1 
+
+Program Details ..................................................................................................... 7 
+
+4.  REPORTS ..................................................................................................................... 8 
+
+4.1 
+
+Input ................................................................................................................... 8 
+4.1.1  Selection Parameters ........................................................................................................................ 8 
+
+4.2 
+
+Processing Logic Overview ....................................................................................... 8 
+
+4.3 
+
+Output ................................................................................................................. 8 
+4.3.1  Report Output Fields ......................................................................................................................... 8 
+4.3.2  Report Layout .................................................................................................................................... 8 
+
+4.4 
+
+Constraints ........................................................................................................... 8 
+
+5.  FORMS ......................................................................................................................... 8 
+
+5.1 
+
+Input ................................................................................................................... 8 
+5.1.1  Selection Parameters ........................................................................................................................ 8 
+
+5.2 
+
+5.3 
+
+Processing Logic Overview ....................................................................................... 9 
+
+Form Layout ......................................................................................................... 9 
+
+6.  CONVERSIONS .......................................................................................................... 10 
+
+6.1 
+
+6.2 
+
+6.3 
+
+6.4 
+
+Data System/Data Flow Diagram ............................................................................... 10 
+
+Type of Data to be Converted .................................................................................. 10 
+
+Logical Data Element Mapping .................................................................................. 10 
+
+Historical Data ...................................................................................................... 10 
+
+7. 
+
+INTERFACES ............................................................................................................. 10 
+
+7.1 
+
+Input .................................................................................................................. 10 
+Interface Parameters ....................................................................................................................... 10 
+
+7.1.1 
+
+7.2 
+
+7.3 
+
+7.4 
+
+Process/Data Flow Diagram ..................................................................................... 11 
+
+Logical Data Element Mapping .................................................................................. 11 
+
+Business Process Specifications ................................................................................ 12 
+
+8.  WORKFLOW .............................................................................................................. 12 
+
+8.1 
+
+Process/Data Flow Diagram ..................................................................................... 12 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 4 of 16                                                                                     TCS – CIAL Confidential 
+
+8.2 
+
+Roles and Responsibilities ....................................................................................... 12 
+
+9.  ENHANCEMENTS ...................................................................................................... 12 
+
+9.1 
+
+9.2 
+
+Process Flow Diagram ............................................................................................ 12 
+
+Enhancement Specifications .................................................................................... 12 
+
+10.  ADDITIONAL INFORMATION .................................................................................... 13 
+
+10.1  Volume and Frequency ........................................................................................... 13 
+
+10.2  Authorizations ...................................................................................................... 13 
+
+10.3  Error Handling Specifications ................................................................................... 13 
+
+10.4  Additional Security Considerations ............................................................................ 13 
+
+11.  UNIT TEST CASE SCENARIOS................................................................................. 14 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 5 of 16                                                                                     TCS – CIAL Confidential 
+
+1. OBJECTIVE 
+To receive data from website in a specified format and to process and store these data 
+in SAP 
+
+•  Report 
+
+• 
+
+Interfaces  
+
+•  Conversions 
+
+•  Enhancements 
+
+•  Forms 
+
+•  Workflow 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 6 of 16                                                                                     TCS – CIAL Confidential 
+
+ SCOPE  
+
+This development is to create a data base for storing approved measurement details from CIAL 
+website to SAP ECC and also to create PO and GR. 
+This interface is used to send approved measurement details from CIAL website to SAP ECC. 
+Vendors  enter  the  measurement  details  against  rate  contract  in  CIAL  website  which  will  go 
+through two levels of approval either by CIAL personnel or external agency as the case may be. 
+Once the measurement is finally approved at website it will be flagged as approved at database 
+level. The measurement details are fetched by SAP PI and send to SAP for creating PO in SAP 
+MM.  
+ 
+
+ 
+
+ 
+
+1.1  Assumptions 
+ 
+
+ 
+
+1.2  Exclusion 
+ 
+ 
+
+N/A 
+
+ 
+ 
+ 
+ 
+2. DEVELOPMENT DETAILS 
+ 
+
+2.1  Program Details 
+
+FS Description 
+
+Inbound PO Details 
+
+Object Owner 
+
+Dayanandan 
+
+Date raised 
+
+01.04.2014 
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+ 
+Sap Existing Name 
+
+Type of Program 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Medium 
+
+MM 
+
+Expected date 
+
+     /     /      
+
+Dev. object type 
+
+Interface 
+
+Oss note 
+
+ 
+
+Copy from 
+existing program                  
+
+ 
+
+Existing T. code 
+
+ Foreground 
+
+ Background 
+
+(The section below will be completed by the Technical team) 
+
+New Name 
+
+ 
+
+Transaction code 
+
+ 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 7 of 16                                                                                     TCS – CIAL Confidential 
+
+3. REPORTS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+ 
+
+3.1 
+
+Input  
+
+3.1.1  Selection Parameters 
+
+ 
+
+ 
+ 
+
+3.2  Processing Logic Overview 
+
+3.3  Output 
+
+3.3.1  Report Output Fields 
+
+ 
+
+3.3.2  Report Layout 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+3.4  Constraints 
+4. FORMS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+4.1 
+
+Input  
+
+ 
+
+ 
+
+4.1.1  Selection Parameters 
+
+Table 1: Selection Parameters for Forms 
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Sel. Type 
+(SO/PA/RB/
+
+Def 
+
+Value 
+
+Mandatory 
+
+Comments   <If any> 
+
+Reference 
+
+CB) 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 8 of 16                                                                                     TCS – CIAL Confidential 
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Sel. Type 
+(SO/PA/RB/
+
+Def 
+
+Value 
+
+Mandatory 
+
+Comments   <If any> 
+
+Reference 
+
+CB) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+4.2  Processing Logic Overview 
+
+ 
+
+ 
+
+4.3  Form Layout 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+Output format (Form Layout) as mentioned below.   
+
+Table 2: Form Details 
+
+Type of Printer (Forms) 
+
+  Dot Matrix 
+   Laser /Desk Jet/Zebra 
+
+Type of Paper Printout  (Forms) 
+
+Printing Requirements 
+
+(mandatory for programs 
+that produces a hard copy) 
+
+  Pre-printed form 
+  Regular Paper (as designed in the layout) 
+
+Paper Design (only for Forms) 
+
+Size of Paper  A4 
+
+Orientation  
+
+ Portrait 
+  Landscape 
+
+Logo  
+
+   To be added 
+
+ 
+
+Form Layout 
+
+(this should be an inserted 
+
+file as an ICON  that 
+
+contains the output display 
+of the program – e.g. excel 
+
+sheet format) 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 9 of 16                                                                                     TCS – CIAL Confidential 
+
+5. CONVERSIONS 
+ 
+
+5.1  Data System/Data Flow Diagram 
+
+ 
+
+ 
+
+5.2  Type of Data to be Converted 
+ 
+
+5.3  Logical Data Element Mapping 
+ 
+
+5.4  Historical Data 
+ 
+6. INTERFACES 
+
+Input  
+
+6.1 
+Service Interface Name: Website_To_SAP_PurchaseOrderDetails 
+
+6.1.1  Interface Parameters 
+
+ 
+ 
+Table :1-Message structure from CIAL website 
+ 
+Column/ Data 
+Element 
+
+Description 
+
+Data Type  Format 
+
+ 
+ 
+IDENTITY COLUMN  Required      
+ 
+
+CONTRACT_NO 
+
+MID 
+
+SNO 
+
+CNTRCT_ITEM_NO 
+
+CNTRCT_ITM_SHORT_
+TEXT 
+CNTRCT_ITM_LONG_T
+EXT 
+
+Contract Number 
+Measurement Id 
+Serial Number 
+Contract item number 
+
+Short text 
+
+Long text 
+
+LOCATION 
+
+COST_CENTER 
+
+ACCOUNT 
+
+INVST_ORDR_NO 
+
+ACT_START_DATE 
+
+ACT_END_DATE 
+
+FORMULA 
+
+PARAMETERS 
+
+Location for which 
+measurement is captured  
+Cost Center 
+G/L Account 
+Investment Order Number 
+Actual start date of work 
+Actual end date of work 
+Formula to be applied on 
+measurement 
+Parameters and values 
+separated by suitable separator 
+
+char 10 
+char 10 
+int 
+nvarchar 5 
+char 40 
+
+Char 4000 
+
+varchar 25 
+
+char 10 
+char 10 
+char 12 
+date 
+date 
+char 255 
+
+char 500 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+YYYY-MM-DD 
+
+YYYY-MM-DD 
+
+ 
+
+ 
+
+Optional
+/ 
+Require
+d 
+Required 
+Required 
+
+Required 
+Required 
+
+Optional 
+
+Optional 
+
+Optional 
+Optional 
+Optional 
+Required 
+Required 
+Optional 
+
+Optional 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 10 of 16                                                                                     TCS – CIAL Confidential 
+
+Description 
+
+Data Type  Format 
+
+Column/ Data 
+Element 
+
+NO_OF_UNITS 
+
+MEASURED_QTY 
+
+FILENAME 
+
+DOC_DATE 
+
+POST_DATE 
+
+COMMENTS 
+
+Number of similar 
+measurements 
+Measurement quantity 
+Name of the attachment 
+Document Date 
+Posting Date 
+
+Text for comments 
+
+CNTRCT_ITM_REF_TEX
+T 
+
+Reference Text 
+
+ENG_IN_CHARGE 
+
+FINAL_APPROVER 
+
+Engineer In Charge 
+Final approver 
+
+SAP_FLAG 
+
+Flag for selection 
+
+ 
+ 
+
+Optional
+/ 
+Require
+d 
+Optional 
+
+Required 
+Optional 
+Required 
+Required 
+Optional 
+
+Optional 
+
+Required 
+Required 
+Required 
+
+int 
+
+int 
+varchar 200 
+date 
+date 
+varchar 
+4000 
+varchar 40 
+
+char 100 
+char 100 
+char 2 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+NULL – Fresh record 
+0 – Denotes an 
+approved rate 
+contract  to be picked 
+by PI 
+1 – Denotes an 
+approved rate 
+contract  picked by PI 
+ 
+
+6.2  Process/Data Flow Diagram 
+Once the measurement details are approved at CIAL website, SAP PI will process the data from 
+source system based on the scheduled poll interval using JDBC adapter; transform data as per SAP 
+MM requirement and sends to target system using ABAP proxy 
+
+6.3  Logical Data Element Mapping 
+ 
+Table:2 Message structure for SAP 
+ 
+Column/ Data 
+Element 
+
+Description 
+
+Data Type  Format 
+
+ZMBOOKID 
+
+EVRTN 
+
+SNO 
+
+EVRTP 
+
+KTEAT1 
+
+SGTXT 
+
+ZLOC 
+
+KOSTL 
+
+HKONT 
+
+AUFNR 
+
+DATS 
+
+Measurement Id 
+Contract Number 
+Serial Number 
+Contract item number 
+Short text 
+Long text 
+Location 
+Cost Center 
+G/L Account 
+Investment Order Number 
+Actual start date of work 
+
+char10 
+char 10 
+numc 12 
+numc 5 
+char 40 
+char 4000 
+char 25 
+char 10 
+char 10 
+char 12 
+dats 8 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Optional
+/ 
+Require
+d 
+Required 
+Required 
+Required      
+Required 
+Required 
+Optional 
+Optional 
+Optional 
+Optional 
+Optional 
+Required 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 11 of 16                                                                                     TCS – CIAL Confidential 
+
+Column/ Data 
+Element 
+
+Description 
+
+Data Type  Format 
+
+Actual end date of work 
+Formula 
+Parameters 
+Units of similar measurement 
+Quantity for each 
+measurement recording 
+File Name 
+Document Date 
+Posting Date 
+Text for comments 
+Reference text 
+Engineer In Charge 
+Final approver 
+
+dats 8 
+char 255 
+char 500 
+char 10 
+quan 13 
+
+char 60 
+Dats 8 
+Dats 8 
+char 4000 
+char 40 
+char100 
+char 100 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+DATS 
+
+ZFRMLA 
+
+ZPARAM 
+
+ZNUM 
+
+MENGE 
+
+ZFNAM 
+
+BLDAT 
+
+BUDAT 
+
+SGTXT 
+
+SGTXT 
+
+ZEIC 
+
+ZFINAPRVR 
+
+ 
+ 
+ 
+ 
+ 
+
+Optional
+/ 
+Require
+d 
+Required 
+Optional 
+Optional 
+Optional 
+Required 
+
+Optional 
+Required 
+Required 
+Optional 
+Optional 
+Required 
+Required 
+
+6.4  Business Process Specifications 
+ 
+7. WORKFLOW 
+
+7.1  Process/Data Flow Diagram 
+
+ 
+ 
+
+ 
+
+7.2  Roles and Responsibilities 
+
+ 
+
+8. ENHANCEMENTS 
+ 
+
+8.1  Process Flow Diagram 
+
+ 
+
+8.2  Enhancement Specifications 
+A custom table is to be maintained to capture details for the incoming details of GR from 
+website. The mapping of data element of incoming details from website to the custom 
+table in SAP is given below 
+ 
+
+Incoming details from 
+website 
+
+Custom table in 
+SAP 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 12 of 16                                                                                     TCS – CIAL Confidential 
+
+CONTRACT_NO 
+
+ZMBOOKID 
+
+MID 
+
+SNO 
+
+CNTRCT_ITEM_NO 
+
+EVRTN 
+
+SNO 
+
+EVRTP 
+
+CNTRCT_ITM_SHORT_TEXT 
+
+KTEAT1 
+
+CNTRCT_ITM_LONG_TEXT 
+
+SGTXT 
+
+LOCATION 
+
+COST_CENTER 
+
+ACCOUNT 
+
+INVST_ORDR_NO 
+
+ACT_START_DATE 
+
+ACT_END_DATE 
+
+FORMULA 
+
+PARAMETERS 
+
+NO_OF_UNITS 
+
+MEASURED_QTY 
+
+FILENAME 
+
+DOC_DATE 
+
+POST_DATE 
+
+COMMENTS 
+
+ZLOC 
+
+KOSTL 
+
+HKONT 
+
+AUFNR 
+
+DATS 
+
+DATS 
+
+ZFRMLA 
+
+ZPARAM 
+
+ZNUM 
+
+MENGE 
+
+ZFNAM 
+
+BLDAT 
+
+BUDAT 
+
+SGTXT 
+
+CNTRCT_ITM_REF_TEXT 
+
+SGTXT 
+
+ENG_IN_CHARGE 
+
+ZEIC 
+
+FINAL_APPROVER 
+
+ZFINAPRVR 
+
+ 
+9. ADDITIONAL INFORMATION 
+
+9.1  Volume and Frequency 
+
+ 
+
+9.2  Authorizations 
+
+ 
+
+9.3  Error Handling Specifications 
+ 
+
+9.4  Additional Security Considerations 
+
+List any security considerations that are different than that specified in Section 1.4 or are not covered in 
+Section 1.4. 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 13 of 16                                                                                     TCS – CIAL Confidential 
+
+10.  UNIT TEST CASE SCENARIOS  
+ 
+
+Table 3: Test Case Scenarios 
+
+Description 
+
+Case Scenario 
+
+Case 1  
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 14 of 16                                                                                     TCS – CIAL Confidential 
+
+A  Appendix 
+
+ 
+
+  
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 15 of 16                                                                                     TCS – CIAL Confidential 
+
+B Naming Conventions 
+
+ 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distrubution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_MM_FS_20_Inbound PO details 
+
+Page 16 of 16                                                                                     TCS – CIAL Confidential 
+
+

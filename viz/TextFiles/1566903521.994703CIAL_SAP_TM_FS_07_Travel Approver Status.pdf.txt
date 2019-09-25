@@ -1,0 +1,982 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+CIAL_SAP_TM_FS_07_TRAVEL APPROVER STATUS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+Praveen  
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+17.06.2015 
+
+001 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+Approver  Stats 
+
+Page 3 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+TABLE OF CONTENTS
+
+1.OBJECTIVE ..................................................................................................................... 6 
+
+2. SCOPE  ........................................................................................................................... 7 
+
+1.1 Assumptions .............................................................................................................. 7 
+
+1.2 Exclusions ................................................................................................................. 7 
+
+3.DEVELOPMENT DETAILS .............................................................................................. 7 
+
+1.3 Program Details .......................................................................................................... 7 
+
+4.REPORTS ........................................................................................................................ 8 
+
+1.4 Input  ....................................................................................................................... 8 
+
+4.1.1Selection Parameters ...........................................................................................................................................................
+
+1.5 Processing Logic Overview ............................................................................................ 8 
+
+1.6 Output ..................................................................................................................... 8 
+
+4.1.2Report Output Fields ............................................................................................................................................................
+4.1.3Report Layout .......................................................................................................................................................................
+
+1.7 Constraints ................................................................................................................ 8 
+
+5.FORMS ............................................................................................................................ 8 
+
+1.8 Input  ....................................................................................................................... 8 
+
+5.1.1Selection Parameters ...........................................................................................................................................................
+
+1.9 Processing Logic Overview ............................................................................................ 9 
+
+1.10 Form Layout .......................................................................................................... 10 
+
+6.CONVERSIONS ............................................................................................................. 12 
+
+1.11 Data System/Data Flow Diagram .................................................................................. 12 
+
+1.12 Type of Data to be Converted .................................................................................... 12 
+
+1.13 Logical Data Element Mapping .................................................................................... 12 
+
+1.14 Historical Data ........................................................................................................ 12 
+
+7.INTERFACES ................................................................................................................ 12 
+
+1.15 Input  ................................................................................................................... 12 
+
+7.1.1Interface Parameters ..........................................................................................................................................................
+
+1.16 Process/Data Flow Diagram ........................................................................................ 12 
+
+1.17 Logical Data Element Mapping .................................................................................... 12 
+
+1.18 Business Process Specifications .................................................................................. 12 
+
+8.WORKFLOW ................................................................................................................. 12 
+
+1.19 Process/Data Flow Diagram ........................................................................................ 12 
+
+Approver  Stats 
+
+Page 4 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+1.20 Roles and Responsibilities ......................................................................................... 12 
+
+9.ENHANCEMENTS ......................................................................................................... 12 
+
+1.21 Process Flow Diagram ............................................................................................... 13 
+
+1.22 Enhancement Specifications ...................................................................................... 13 
+
+10.ADDITIONAL INFORMATION ..................................................................................... 13 
+
+1.23 Volume and Frequency ............................................................................................. 13 
+
+1.24 Authorizations ........................................................................................................ 13 
+
+ Display ........................................................................................................................ 13 
+
+1.25 Error Handling Specifications ..................................................................................... 13 
+
+1.26 Additional Security Considerations .............................................................................. 13 
+
+11.UNIT TEST CASE SCENARIOS  ................................................................................. 14
+
+ 
+
+Approver  Stats 
+
+Page 5 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+1.  OBJECTIVE 
+ 
+
+Travel  request/expense  related  approval  status  need  to  be  displayed  along  with  other 
+details  in ECC 
+
+•  Report 
+
+• 
+
+Interfaces  
+
+•  Conversions 
+
+•  Enhancements 
+
+•  Forms 
+
+•  Workflow 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+Approver  Stats 
+
+Page 6 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+ SCOPE  
+
+2. 
+ 
+The requirement is to view approval status of Trip  request/Expenses in ECC 
+
+1.1  Assumptions 
+ 
+N/A 
+
+ 
+
+1.2  Exclusions 
+ 
+ 
+
+N/A 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.  DEVELOPMENT DETAILS 
+ 
+
+1.3  Program Details 
+
+FS Description 
+
+Object Owner 
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+ 
+Sap Existing Name 
+
+Type of Program 
+
+Service Tax 
+
+Martin 
+
+Low 
+
+FI 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Existing T. code 
+
+ Foreground 
+
+ Background 
+
+(The section below will be completed by the Technical team) 
+
+New Name 
+
+ 
+
+Transaction code 
+
+ 
+
+ 
+
+Date raised 
+
+31/01/2014           
+
+Expected date 
+
+          /          /           
+
+Dev. object type 
+
+Forms 
+
+Oss note 
+
+ 
+
+Copy from 
+existing program                  
+
+ 
+
+Approver  Stats 
+
+Page 7 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+4.  REPORTS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+ 
+
+1.4 
+
+Input  
+
+4.1.1  Selection Parameters 
+
+ 
+
+ 
+ 
+
+1.5  Processing Logic Overview 
+
+1.6  Output 
+
+4.1.2  Report Output Fields 
+
+ 
+
+4.1.3  Report Layout 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+1.7  Constraints 
+5.  FORMS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+1.8 
+
+Input  
+
+ 
+
+ 
+
+5.1.1  Selection Parameters 
+
+Table 1: Selection Parameters for Forms 
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Sel. Type 
+(SO/PA/RB/
+
+Def 
+
+Value 
+
+Mandatory 
+
+Comments   <If any> 
+
+Reference 
+
+CB) 
+
+ 
+
+Approver  Stats 
+
+Page 8 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+ 
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Sel. Type 
+(SO/PA/RB/
+
+Def 
+
+Value 
+
+Mandatory 
+
+Comments   <If any> 
+
+Reference 
+
+CB) 
+
+ 
+
+Employee Code 
+
+Trip Number 
+
+Travel Request 
+
+Travel Expense 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+RB 
+
+RB 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+1.9  Processing Logic Overview 
+
+ 
+
+A separate T code to be created with selection parameters as (1) Employee Code  (2) Trip Number (3) 
+Travel Request/Expense in radio button . 
+
+Report should be generated as per the attached format. . 
+
+ 
+
+Logic for Travel Request 
+
+Go to table FTPT_REQUEST enter Employee Code  and Trip Number as input   
+
+Take the required details from the tables 
+
+Take the workflow status from the table ZHRD015 
+
+ 
+
+ 
+
+  Logic for Travel Expense 
+
+Fetch the required details from the functional module BAPI_TRIP_GET_DETAILS 
+
+Bring the workflow status by using business object WS9000037 and populate the lable with the agents and 
+approval screen 
+
+  
+
+ 
+
+1.10  Report Layout 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+Output format (Form Layout) as mentioned below.   
+
+Printing Requirements 
+
+(mandatory for programs 
+that produces a hard copy) 
+
+Table 2: Form Details 
+
+Type of Printer (Forms) 
+
+  Dot Matrix 
+  Laser /Desk Jet/Zebra 
+
+Type of Paper Printout  (Forms) 
+
+Approver  Stats 
+
+Page 9 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+ 
+
+  Pre-printed form 
+  Regular Paper (as designed in the layout) 
+
+Paper Design (only for Forms) 
+
+Size of Paper  A4 
+
+Orientation  
+
+  Portrait 
+  Landscape 
+
+Logo  
+
+  To be added 
+
+ 
+
+Report Layout 
+
+(this should be an inserted 
+
+file as an ICON  that 
+
+contains the output display 
+of the program – e.g. excel 
+
+sheet format) 
+
+ 
+
+Travel Request 
+
+Travel 
+
+_Output.pdf
+
+Expense_Output.pdf
+
+ 
+
+Approver  Stats 
+
+Page 10 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+6.  CONVERSIONS 
+ 
+
+1.11  Data System/Data Flow Diagram 
+
+1.12  Type of Data to be Converted 
+ 
+
+1.13  Logical Data Element Mapping 
+ 
+
+1.14  Historical Data 
+ 
+7. 
+
+INTERFACES 
+
+1.15  Input  
+
+7.1.1  Interface Parameters 
+
+ 
+
+ 
+ 
+ 
+
+1.16  Process/Data Flow Diagram 
+
+ 
+
+ 
+
+ 
+
+1.17  Logical Data Element Mapping 
+
+1.18  Business Process Specifications 
+ 
+8.  WORKFLOW 
+
+1.19  Process/Data Flow Diagram 
+
+ 
+ 
+
+ 
+
+1.20  Roles and Responsibilities 
+
+ 
+
+9.  ENHANCEMENTS 
+ 
+
+1.21  Process Flow Diagram 
+
+ 
+
+ 
+
+Approver  Stats 
+
+Page 11 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+1.22  Enhancement Specifications 
+ 
+10.  ADDITIONAL INFORMATION 
+ 
+
+1.23  Volume and Frequency 
+
+1.24  Authorizations 
+
+Display 
+
+1.25  Error Handling Specifications 
+
+What are the business specifications/needs to handle the errors? 
+
+ 
+
+1.26  Additional Security Considerations 
+
+List any security considerations that are different than that specified in Section 1.4 or are not covered in 
+Section 1.4. 
+
+ 
+
+Approver  Stats 
+
+Page 12 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+11.  UNIT TEST CASE SCENARIOS  
+ 
+
+Case Scenario 
+
+Description 
+
+Table 3: Test Case Scenarios 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Approver  Stats 
+
+Page 13 of 15                                                                                     TCS – CIAL Confidential 
+
+A  Appendix 
+
+ 
+
+ 
+
+  
+
+ 
+
+Approver  Stats 
+
+Page 14 of 15                                                                                     TCS – CIAL Confidential 
+
+ 
+
+ 
+
+B Naming Conventions 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distrubution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+Approver  Stats 
+
+Page 15 of 15                                                                                     TCS – CIAL Confidential 
+
+

@@ -1,0 +1,666 @@
+SAP IMPLEMENTATION  
+
+ 
+
+END USER MANUAL 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                   < CIAL_SAP_EUM_02_DISPATCH HANDLING SECTION> 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+
+ 
+
+          
+
+          Confidential                                                          1 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                ABBREVATIONS 
+
+ 
+
+ABBREVATION 
+
+CIAL 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Versi
+on 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                CHANGE HISTORY 
+
+Description 
+
+Created by 
+
+Date 
+
+Reviewed 
+by 
+
+Date 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+          
+
+          Confidential                                                          2 
+
+TABLE OF CONTENTS 
+
+ 
+
+1  Acknowledge Dispatch Request: ................................................... 5 
+
+2  Enter dispatch details & rate: ......................................................... 7 
+
+3  Dispatch settlement through PO creation: ...................................... 9 
+
+4  Dispatch Summary report with editing option: ............................ 13 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+          
+
+          Confidential                                                          3 
+
+User’s Manual for Dispatch Handling Section 
+
+The dispatch handling section had to perform a series of actions to complete the dispatch 
+processing of the requests. These are explained one by one. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+          
+
+          Confidential                                                          4 
+
+1  Acknowledge Dispatch Request: 
+
+Overview 
+
+Trigger:  
+
+This procedure will be used to acknowledge the receipt of dispatches. 
+
+Business Process Description Overview 
+
+This transaction will acknowledge the receipt of dispatches. 
+
+ 
+
+ 
+
+ 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+ 
+
+Output - Results 
+Dispatches acknowledged  
+
+ 
+Procedural Steps 
+
+Comments 
+
+Access the transaction by: 
+
+Via Menus 
+Via Transaction Code 
+
+ 
+ZDTS007 
+
+ 
+
+ 
+
+When  the  departments  hand  over  the  dispatches,  the  dispatch  handling  section 
+should  acknowledge  the  receipt  of  these  dispatches.  This  will  be  done  using  the 
+transaction ZDTS007.  From the selection screen, select the respective department, 
+the request date and mode of dispatch as follows: 
+
+ 
+
+ 
+Based  on  selection,  the  courier  dispatches  and  India  post  dispatches  are  displayed 
+separately in the report. From the report, the user can select individual  request by 
+checking  the  boxes  or  can  select  the  entire  requests  by  pressing  select  all  button. 
+Provision is provided for deselect all requests also. Pressing the save button from the 
+list will acknowledge the receipt of the dispatches. This action will change the status 
+of the dispatch request from ‘New’ to ‘Received/Dispatched’. 
+ 
+
+          
+
+          Confidential                                                          5 
+
+ 
+
+ 
+
+For courier dispatches: 
+
+ 
+For India post dispatches: 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+          
+
+ 
+
+          Confidential                                                          6 
+
+2  Enter dispatch details & rate: 
+
+Overview 
+
+Trigger:  
+
+This procedure will be used to enter dispatch details and rate. 
+
+This transaction will be used to enter dispatch details and rate. 
+
+Business Process Description Overview 
+
+ 
+
+ 
+
+ 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+ 
+
+Output - Results 
+dispatch details and rate entered 
+
+ 
+Procedural Steps 
+
+Comments 
+
+Access the transaction by: 
+
+Via Menus 
+Via Transaction Code 
+
+ 
+ZDTS008 
+
+ 
+
+ 
+
+Once the dispatches were physically sent, all the dispatch details and the rate of the 
+dispatch had to be maintained against each request. This can be done only to those 
+requests which are acknowledged. This is done using the transaction ZDTS008. The 
+dispatch  details  of  the  courier  services  and  India  post  services  are  carried  out 
+separately.  The  user  had  to  fill  the  request  date  and  will  have  to  select  Courier  or 
+India Post. The selection screen will look as follows: 
+ 
+
+ 
+For courier dispatches having weight less than 500gm, the user will have to enter 
+the  courier  reference  number,  dispatch  date,  location  code  based  on  the 
+dispatched  location  and  rate  code  based  on  the  weight  of  the  dispatch.  This  will 
+cause the rate to be filled automatically. For dispatches having weight greater than 
+
+ 
+
+          
+
+          Confidential                                                          7 
+
+500gm, the user should select the rate code ‘OTHRS’. This will enable the rate field 
+for  editing.  The  user  should  manually  enter  the  rate  here.  All  the  fields  that  are 
+editable are mandatory fields and the user should fill all these fields. Once details 
+are entered, press the save button to save changes. 
+  
+In  case  of  India  post  dispatches,  the  user  will  have  to  enter  reference  number, 
+dispatch date and the rate. Then press the save button to save changes. 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Once saved, the request status changes from ‘Received/Dispatched’ to ‘Ready to be 
+settled’. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+          
+
+ 
+
+          Confidential                                                          8 
+
+3  Dispatch settlement through PO creation: 
+
+Overview 
+
+Trigger:  
+
+This procedure will be used to create PO for dispatch settlement. 
+
+Business Process Description Overview 
+
+This transaction will create PO for dispatch settlement. 
+
+ 
+
+ 
+
+ 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+ 
+
+Output - Results 
+Dispatch request settled by creating PO   
+
+ 
+Procedural Steps 
+
+Comments 
+
+Access the transaction by: 
+
+Via Menus 
+Via Transaction Code 
+
+ 
+ 
+
+ 
+
+ 
+
+Once the rate had been maintained for the requests, these can be settled by creating 
+a  Purchase  Order.  The  settlement  is  done  based  on  the  dispatch  dates  of  the 
+requests. If multiple requests are there for a department, then these added together 
+to  become  an  item  of  the  PO.  The  settlement  is  done  separately  for  Courier  and 
+India  Post.  Test  run  facility  is  given  to  check  whether  PO  can  be  created  without 
+error  or  not.  The  following  screen  shots  shows  the  various  steps  in  dispatch 
+settlement. 
+Courier Settlement: 
+
+Testrun Success output: 
+
+ 
+
+          
+
+          Confidential                                                          9 
+
+ 
+
+ 
+
+ 
+
+Testrun Error output: 
+
+ 
+After PO creation: 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+          
+
+ 
+
+          Confidential                                                          10 
+
+Purchase Order: 
+
+India Post Settlement: 
+ 
+
+ 
+Testrun Success Output: 
+
+ 
+
+ 
+
+ 
+
+          
+
+ 
+
+          Confidential                                                          11 
+
+ 
+After PO creation: 
+
+ 
+Purchase Order: 
+
+ 
+
+ 
+
+ 
+Note: 
+Once PO had been successfully created, the user should add the Name of work text 
+field of the PO. This will start the approval process of the PO. 
+ 
+ 
+ 
+ 
+
+          
+
+ 
+
+          Confidential                                                          12 
+
+4  Dispatch Summary report with editing option: 
+
+Overview 
+
+Trigger:  
+
+This procedure will  be used  to display dispatch requests with edit option based  on 
+selection criteria. 
+
+This transaction display dispatch requests with edit option based on selection 
+
+Business Process Description Overview 
+
+criteria. 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+ 
+
+ 
+
+ 
+
+Output - Results 
+Dispatch Request displayed with edit 
+option 
+
+ 
+
+ 
+
+Procedural Steps 
+
+Comments 
+
+Access the transaction by: 
+
+Via Menus 
+Via Transaction Code 
+
+ 
+ZDTS010 
+
+ 
+
+ 
+
+The transaction for the report is ZDTS010. This report can be used for displaying all 
+the requests of all the departments based on the selection criteria.  This report can 
+also be used to  edit the dispatch details entered using transaction ZDTS008. This 
+can  be  done  only  for  requests  that  are  not  yet  settled.  A  legend  for  the  icons 
+displayed on the list is also given on the list output. 
+ 
+
+To edit the dispatch details, click on the edit 
+report will look as follows: 
+
+ icon on the list. The output of the 
+
+          
+
+          Confidential                                                          13 
+
+ 
+
+          
+
+ 
+
+          Confidential                                                          14 
+
+

@@ -1,0 +1,959 @@
+ 
+SAP IMPLEMENTATION  
+ 
+END USER MANUAL 
+ 
+ 
+ 
+ 
+ 
+
+                                                                CIAL_EUM_DMS_DOCUMENTATION 
+
+ 
+
+  
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+
+                    Confidential                                                         1 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                ABBREVATIONS 
+
+ABBREVATION 
+
+DESCRIPTION 
+
+CIAL 
+
+ 
+
+Cochin International Airport Ltd. 
+
+ 
+
+ 
+
+                CHANGE HISTORY 
+
+Description 
+
+Created by 
+
+Date 
+
+Versi
+on 
+
+Reviewed 
+by 
+
+Date 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         2 
+
+ 
+ 
+ 
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+ 
+ 
+
+ Table of Contents 
+
+Create Document (Note) 
+Creation of object link / Link to other document 
+Approval of DMS Document 
+Review of document. 
+Rejection of document 
+Initiate after rejection / Create document Version. 
+View the previous comments. 
+View the previous document. 
+Document intimation to initiator  after final approval. 
+Find Document and Actual responsible person. 
+
+4 
+11 
+13 
+15 
+22 
+24 
+30 
+32 
+35 
+37 
+
+                    Confidential                                                         3 
+
+ 
+
+1.  Create Document (Note) 
+ 
+ 
+
+Overview 
+
+ 
+Trigger:  
+ 
+This procedure will be used to create a request for approval via DMS for general note and to store 
+business document. 
+ 
+
+Business Process Description Overview 
+
+ 
+
+This transaction will be used to create a DMS request for approval document. 
+
+ 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+Document Type 
+
+APD Office – A01 
+Civil Dept – C01 
+DFS Dept – D02 
+Electrical – E01 
+Finance – F01 
+Cargo dept – G01 
+HR Dept –H01 
+ICT dept – I01 
+KIAS Dept – K01 
+Marketing Dept – P01 
+MD Office – M01 
+Commercial Dept- N01 
+Operation Dept –O01 
+Secretarial – T01 
+Security dept –S01 
+Fire Dept – R01  
+
+Output - Results 
+Document C01  10000000179 000 00 created 
+ 
+Version C01 10000000179 000 01 Created    
+
+ 
+
+Comments 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         4 
+
+ 
+
+Procedural Steps 
+
+1.1.  Access the transaction by: 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+Via Menus 
+
+Via Transaction Code 
+
+SAP Easy Access  Logistics  Plant Maintenance Management of 
+Technical ObjectsFunctional LocationMeasurement DocumentCreate 
+CV01N 
+
+ 
+
+                    Confidential                                                         5 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+a)  Enter following details in the below screen 
+
+ 
+
+Document type : C01 
+ 
+Then press Enter 
+ 
+
+Select Document status: Initiator 1 “WJ” 
+ 
+Then press Enter 
+
+ 
+
+ 
+
+                    Confidential                                                         6 
+
+ 
+ 
+
+ 
+
+ 
+
+b)  Enter following details in opened screen 
+
+Document description: “Note for test ” 
+ 
+Click Open original to attach document from system and “Save “ 
+
+ 
+
+                    Confidential                                                         7 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         8 
+
+c)  Click save button after entering the details.System will create  document number. 
+
+ 
+ 
+
+Click Change Icon to change dodument and enter the comments from the initiator. 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         9 
+
+ 
+ 
+ 
+Change  the document status “Select the relevant document status”. 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         10 
+
+ 
+Enter comments as shown . 
+ 
+
+ 
+ 
+
+ 
+
+2.  Creation of object link / Link to other document  
+ 
+ 
+
+a)  Link PO / Document / other object as shown (If any). 
+
+ 
+ 
+
+                    Confidential                                                         11 
+
+b)  Double click the number to view the document  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+c)  Save the document “System will trigger workjflow to next user” 
+
+ 
+
+ 
+
+                    Confidential                                                         12 
+
+ 
+
+ 
+ 
+
+3.  Approval of DMS Document 
+ 
+
+Procedural Steps 
+
+3.1.  Access the transaction by: 
+
+ 
+
+Via Menus 
+Via Transaction Code 
+
+SAP Easy Access  SAP business work place ->inbox->  Workflow  
+SBWP 
+
+ 
+
+a)  Double click the workflow item as shown 
+
+                    Confidential                                                         13 
+
+ 
+ 
+
+b)  Double click the comments to view in full. 
+
+ 
+ 
+
+                    Confidential                                                         14 
+
+ 
+
+ 
+
+c)  Change the status as action fo the document. 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+4.  Review of document. 
+ 
+
+a)  Select the review status to review from any. 
+
+ 
+ 
+
+ 
+
+                    Confidential                                                         15 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         16 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+b)  Enter the SAP user ID / Select from list. And save 
+
+c)  Document in reviewer inbox. 
+
+ 
+
+                    Confidential                                                         17 
+
+ 
+ 
+
+ 
+
+d)  Change the status as shown  
+
+ 
+
+                    Confidential                                                         18 
+
+ 
+ 
+ 
+
+ 
+
+e)  Give remarks if required and save. 
+
+ 
+
+                    Confidential                                                         19 
+
+f)  Document in sender inbox. 
+
+ 
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         20 
+
+ 
+
+ 
+
+ 
+
+g)  Action can be taken based on the reviewer comments. By changing the status as shown. 
+
+h)  Document will be found in the next approver inbox as shown  
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         21 
+
+i)  Change the document status as action for the document. 
+
+ 
+
+5.  Rejection of document 
+ 
+
+a)  Document found in next approver   inbox. 
+
+ 
+
+ 
+
+ 
+
+b)  Action taken as “Reject” the document as shown 
+
+ 
+
+                    Confidential                                                         22 
+
+ 
+
+ 
+
+c)  Intimation to all previous approvers and to intiator will be given as shown. 
+
+ 
+
+                    Confidential                                                         23 
+
+ 
+
+6. 
+ 
+
+Initiate after rejection / Create document Version. 
+
+Via Menus 
+
+Via Transaction Code 
+
+SAP Easy Access  Logistics  Plant Maintenance Management of 
+Technical ObjectsFunctional LocationMeasurement DocumentCreate 
+CV01N 
+
+ 
+
+a)  Select the rejected document.and click new version as shown. 
+
+ 
+
+ 
+ 
+
+                    Confidential                                                         24 
+
+b)  Press enter/ click continue to create version. 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         25 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+c)  Copy the purchase order link created from previous document (if required). 
+
+d)  Initiate the process Again for approval. 
+
+ 
+
+                    Confidential                                                         26 
+
+ 
+
+e)  Change the description if required. 
+
+ 
+
+                    Confidential                                                         27 
+
+ 
+
+f)  Click Change Icon to initiate approval  process 
+
+ 
+ 
+Version “01” will be created. 
+ 
+
+ 
+
+                    Confidential                                                         28 
+
+ 
+ 
+ 
+
+ 
+
+g)  Change the status as shown. 
+
+ 
+
+                    Confidential                                                         29 
+
+ 
+
+7.  View the previous comments. 
+ 
+
+a)  Click “Previous remarks in remarks tab to view the rejected / Previous comments made for previous 
+
+documents. 
+
+ 
+
+ 
+
+                    Confidential                                                         30 
+
+ 
+
+ 
+
+b)  Comments will be shown as below. 
+
+ 
+
+                    Confidential                                                         31 
+
+ 
+
+8.  View the previous document. 
+ 
+
+a)  Click the “product structure” to view the previous documents. 
+
+ 
+
+ 
+
+                    Confidential                                                         32 
+
+ 
+
+ 
+
+b)  Right click the document and click display to view. 
+
+ 
+
+                    Confidential                                                         33 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         34 
+
+c)  Document will be shown as below. 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+9.  Document intimation to initiator  after final approval. 
+
+ 
+ 
+
+                    Confidential                                                         35 
+
+ 
+ 
+Document will be displayed as shown. 
+ 
+
+ 
+
+                    Confidential                                                         36 
+
+ 
+
+ 
+
+10.  Find Document and Actual responsible person. 
+ 
+
+Via Menus 
+
+Via Transaction Code 
+
+SAP Easy Access  Logistics  Plant Maintenance Management of 
+Technical ObjectsFunctional LocationMeasurement DocumentFind 
+CV04N 
+
+ 
+
+                    Confidential                                                         37 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         38 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+a)  Enter the document type/ Created User / Document created. And execute. 
+
+b)  Result for above entered parameter. 
+
+ 
+
+ 
+
+                    Confidential                                                         39 
+
+ 
+
+c)  Double click to view the actual responsible person. 
+
+ 
+The User ID Having “Admin” Authorization other than “DMSADMIN” ID is actual responsible person for the document. 
+ 
+Here User “NAYEEM” is actual responsible person for the document. 
+ 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         40 
+
+

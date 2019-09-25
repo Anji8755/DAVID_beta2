@@ -1,0 +1,1231 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+CIAL_FS_HCM _ ALERT MAIL TO EMPLOYEE TO UPDATE NOMINATION 
+DETAILS BASED ON THE MARITAL STATUS CHANGE (MAIL TRIGGERING) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+Manikandan N 
+
+28.10.2013 
+
+1.0 
+
+ 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 2 of 23                                                                                     TCS – CIAL Confidential 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 3 of 23                                                                                     TCS – CIAL Confidential 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 6 
+
+2.  SCOPE .......................................................................................................................... 7 
+
+2.1 
+
+2.2 
+
+Assumptions ......................................................................................................... 7 
+
+Exclusions ............................................................................................................ 7 
+
+3.  DEVELOPMENT DETAILS ........................................................................................... 8 
+
+3.1 
+
+Program Details ..................................................................................................... 8 
+
+4.  REPORTS ..................................................................................................................... 9 
+
+4.1 
+
+Input ................................................................................................................... 9 
+4.1.1  Selection Parameters ........................................................................................................................ 9 
+
+4.2 
+
+Processing Logic Overview ....................................................................................... 9 
+
+4.3 
+
+Output ................................................................................................................ 11 
+4.3.1  Report Output Fields ....................................................................................................................... 11 
+4.3.2  Report Layout .................................................................................................................................. 11 
+
+4.4 
+
+Constraints .......................................................................................................... 12 
+
+5.  FORMS ....................................................................................................................... 13 
+
+5.1 
+
+Input .................................................................................................................. 13 
+5.1.1  Selection Parameters ...................................................................................................................... 13 
+
+5.2 
+
+5.3 
+
+Processing Logic Overview ...................................................................................... 13 
+
+Form Layout ........................................................................................................ 13 
+
+6.  CONVERSIONS .......................................................................................................... 15 
+
+6.1 
+
+6.2 
+
+6.3 
+
+6.4 
+
+Data System/Data Flow Diagram ............................................................................... 15 
+
+Type of Data to be Converted .................................................................................. 15 
+
+Logical Data Element Mapping .................................................................................. 15 
+
+Historical Data ...................................................................................................... 15 
+
+7. 
+
+INTERFACES ............................................................................................................. 16 
+
+7.1 
+
+Input .................................................................................................................. 16 
+Interface Parameters ....................................................................................................................... 16 
+
+7.1.1 
+
+7.2 
+
+7.3 
+
+7.4 
+
+Process/Data Flow Diagram ..................................................................................... 16 
+
+Logical Data Element Mapping .................................................................................. 17 
+
+Business Process Specifications ................................................................................ 17 
+
+8.  WORKFLOW .............................................................................................................. 18 
+
+8.1 
+
+Process/Data Flow Diagram ..................................................................................... 18 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 4 of 23                                                                                     TCS – CIAL Confidential 
+
+8.2 
+
+Roles and Responsibilities ....................................................................................... 18 
+
+9.  ENHANCEMENTS ...................................................................................................... 19 
+
+9.1 
+
+9.2 
+
+Process Flow Diagram ............................................................................................ 19 
+
+Enhancement Specifications .................................................................................... 19 
+
+10.  ADDITIONAL INFORMATION .................................................................................... 20 
+
+10.1  Volume and Frequency ........................................................................................... 20 
+
+10.2  Authorizations ...................................................................................................... 20 
+
+10.3  Error Handling Specifications ................................................................................... 20 
+
+10.4  Additional Security Considerations ............................................................................ 20 
+
+11.  UNIT TEST CASE SCENARIOS................................................................................. 21 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 5 of 23                                                                                     TCS – CIAL Confidential 
+
+1. OBJECTIVE 
+ 
+
+The  functional  specification  allows  the  developer  to  understand  the  development 
+requirements  from  a  functional  point  of  view  and  provides  all  necessary  functional 
+details to enable the programmer to develop the technical solution.  
+
+The  content  and  level  of  detail  of  the  following  sections  strongly  depends  on  the  type 
+and complexity of the technical solution to be developed.  
+
+ 
+
+To  trigger  an  alert  mail  to  the  employee  when  he/she  changes  the  Marital  Status  to 
+Married.  
+ 
+There are two instances for the employees “Marital Status” will get updated in ECC.  
+ 
+
+1.  When employee updates thru ESS & 
+2.  Also when HR updates on issuing gift voucher 
+
+ 
+
+ 
+
+ 
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 6 of 23                                                                                     TCS – CIAL Confidential 
+
+2.  SCOPE  
+ 
+This  chapter  discusses  the  scope  of  development,  scope  exclusions  if  any  and 
+assumptions made by TCS with respect to implementation. 
+ 
+
+2.1  Assumptions 
+ 
+To  trigger  an  alert  mail  to  the  employee  when  he/she  changes  the  Marital  Status  to 
+Married.  
+ 
+There are two instances for the employees “Marital Status” will get updated in ECC.  
+ 
+
+1.  When employee updates thru ESS & 
+2.  Also when HR updates on issuing gift voucher 
+
+  
+
+2.2  Exclusions 
+ 
+ 
+NA 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 7 of 23                                                                                     TCS – CIAL Confidential 
+
+ 
+3. DEVELOPMENT DETAILS 
+ 
+
+3.1  Program Details 
+
+FS Description 
+
+Object Owner 
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+Sap Existing Name 
+
+ 
+
+ 
+
+Medium 
+
+HCM 
+
+ 
+
+ 
+
+Alert Mail to Employee to update Nomination details based 
+on the marital status change (Mail Triggering) 
+
+Date raised 
+
+28/10/2013 
+
+Expected date 
+Dev. object type  Mail 
+
+     /     /      
+
+Oss note 
+
+ 
+
+Copy from 
+existing program                  
+Existing T. code 
+
+ 
+
+ 
+
+Type of Program 
+
+ Foreground 
+
+ Background 
+
+(The section below will be completed by the Technical team) 
+
+New Name 
+
+ 
+
+Transaction code 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 8 of 23                                                                                     TCS – CIAL Confidential 
+
+4. REPORTS 
+
+ 
+
+NA 
+
+ 
+
+4.1 
+
+Input  
+
+ 
+
+ 
+
+4.1.1  Selection Parameters 
+
+NA 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 9 of 23                                                                                     TCS – CIAL Confidential 
+
+4.2  Processing Logic Overview 
+
+NA 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 10 of 23                                                                                     TCS – CIAL Confidential 
+
+4.3  Output 
+ 
+ 
+
+4.3.1  Report Output Fields 
+
+NA 
+
+ 
+
+ 
+
+4.3.2  Report Layout 
+
+NA 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 11 of 23                                                                                     TCS – CIAL Confidential 
+
+4.4  Constraints 
+NA 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 12 of 23                                                                                     TCS – CIAL Confidential 
+
+5. FORMS 
+
+5.1 
+
+Input  
+
+ 
+
+NA 
+
+ 
+
+5.1.1  Selection Parameters 
+
+ 
+NA 
+ 
+
+5.2  Processing Logic Overview 
+
+ 
+
+NA 
+
+ 
+
+5.3  Form Layout 
+
+Output format (Form Layout) as mentioned below.   
+
+NA 
+
+Table 1: Form Details 
+
+Type of Printer (Forms) 
+
+  Dot Matrix 
+  Laser /Desk Jet/Zebra 
+
+Type of Paper Printout  (Forms) 
+
+Printing Requirements 
+
+(mandatory for programs 
+that produces a hard copy) 
+
+  Pre-printed form 
+  Regular Paper (as designed in the layout) 
+
+Paper Design (only for Forms) 
+
+Size of Paper  A4 
+
+Orientation  
+
+  Portrait 
+  Landscape 
+
+Logo  
+
+  To be added 
+
+ 
+
+Form Layout 
+
+(this should be an inserted 
+
+ 
+
+file as an ICON  that 
+
+contains the output display 
+of the program – e.g. excel 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 13 of 23                                                                                     TCS – CIAL Confidential 
+
+sheet format) 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 14 of 23                                                                                     TCS – CIAL Confidential 
+
+6. CONVERSIONS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+ 
+
+This section should be completed for data conversions and loads (e.g., legacy master and transactional 
+data to R3, and to describe the load) 
+
+ 
+
+6.1  Data System/Data Flow Diagram 
+Prepare a Visio or Power Point diagram illustrating the data flow from source systems to the target 
+system. 
+
+List any additional items needed to describe adequately the data to be converted. 
+
+ 
+
+ 
+
+6.2  Type of Data to be Converted 
+State what type of data (Master Data or Transactional Data) is to be converted, if applicable. 
+
+<Insert text> 
+
+ 
+
+6.3  Logical Data Element Mapping 
+Complete Logical Data mapping by using the template provided in Documentum. 
+
+Attach the completed logical data map for each of the systems and their respective elements to this 
+Functional Specification document in Documentum. 
+
+The logical data map should be a system label to system label map as opposed to Table-Field information. 
+
+Once mapping is done, state under this heading that the mapping is complete. 
+ 
+
+<Insert text> 
+
+ 
+
+6.4  Historical Data 
+ 
+Historical data is any transactional data falling outside of the current Fiscal year. 
+
+•  Requirement – How much history is required (in time periods)? 
+
+Justification – Give business justification for the indicated time period 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 15 of 23                                                                                     TCS – CIAL Confidential 
+
+7. INTERFACES 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+This section specifies the business requirements on system-to-system data movement (system interfaces). 
+
+7.1 
+
+Input  
+
+<Provide a description of the input data, data validation requirements, selection criteria, fields, format, 
+triggers, and so on. 
+
+Depending on the type of development or modifications describe/identify the input AS APPLICABLE; e.g. 
+for reports describe the layout of the selection screen, for inbound interfaces describe the file format. 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+<Insert text> 
+
+ 
+
+ 
+
+7.1.1  Interface Parameters 
+
+<Explain what the table contains. 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+<Insert text> 
+
+Table 2: Interface Parameters  
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Interface Type  
+
+Reference 
+
+Default Values 
+
+ 
+
+Mandatory 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+7.2  Process/Data Flow Diagram 
+Replace the example diagram below with a VISIO or Power Point flow diagram depicting the process and 
+data flow of the interface.  The diagram need not describe every detail, but should show any systems 
+involved in the interface, and provide a Functional Level understanding of the data that needs to flow 
+between the systems. 
+
+SAP/R3
+
+<Insert text> 
+
+Electronic
+
+Fund
+
+Transfer
+
+Bank
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 16 of 23                                                                                     TCS – CIAL Confidential 
+
+7.3  Logical Data Element Mapping 
+Complete Logical Data Mapping by using the template provided in Documentum. 
+
+•  Attach the completed logical data map for each system and its respective elements to this 
+
+Functional Specification document in Documentum. 
+
+•  The logical data map should be a system label to system label map as opposed to Table-Field 
+
+information. 
+
+•  DO NOT populate Technical Information in the template. 
+
+•  Once mapping is done, state under this heading that the mapping is complete. 
+
+Please indicate either here or within the Data Mapping document: 
+
+•  All data elements included in this interface that are dependent on other data – are codes being 
+
+sent that require resolution by the receiving system?  
+
+•  All data hierarchies or logical groupings that must be provided for 
+
+•  All data conversions or lookups required 
+
+<Insert text> 
+
+ 
+
+7.4  Business Process Specifications 
+ 
+List and specify all the business requirements for the data being moved (e.g., acknowledgement, process 
+sequentially, and synchronization, etc.). 
+
+Please include: 
+
+•  The system to be interfaced with R/3 
+
+•  Where the system runs 
+
+•  Whether the system is a single instance, or multi-instance with multiple sites to be integrated 
+
+•  The  type(s)  of  data  to  be  handled  by  the  interface  –  codes  or  reference  data,  master  data, 
+
+transactional data, or a combination of data types 
+
+•  Whether the interface will be used for initial loads and/or conversions 
+
+•  Any dependencies on other interfaces or business processes 
+
+•  Any special business rules that must be maintained when extracting / posting the data 
+
+•  The purposed timing of the interface – how frequently must the interface run? 
+
+•  Any potential timing issues and how they should be addresses from a functional perspective 
+
+•  Any specific turnaround requirements – must data be posted within a specified time from when it 
+
+is received? 
+
+•  Whether a full refresh is always required, or just the changes since the last execution 
+
+•  How the data is selected and the interface is triggered (outbound interface) 
+
+•  How different update modes will be handled – create, change, logical or physical delete 
+
+•  Whether there are any special security requirements for the interface – will the interface contain 
+
+any sensitive data (patient, customer, employee, price, etc.)? 
+
+ 
+
+<Insert text> 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 17 of 23                                                                                     TCS – CIAL Confidential 
+
+8. WORKFLOW 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+This section specifies the business requirements on the workflow.   
+
+8.1  Process/Data Flow Diagram 
+
+Place a VISIO cross-functional flow diagram depicting the process flow of the workflow.  The diagram 
+need not describe every detail, but should show any automated/manual processes and agents involved in 
+the workflow, and provide a Functional Level understanding of the data that needs to flow between the 
+processes. 
+
+ 
+ 
+
+ 
+
+8.2  Roles and Responsibilities 
+
+ 
+
+<Complete Logical Data Mapping by using the template provided in Documentum.> 
+
+Table 3: Roles & Responsibilities 
+
+Role 
+
+Responsibilities 
+
+Agent Assignment 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 18 of 23                                                                                     TCS – CIAL Confidential 
+
+9. ENHANCEMENTS 
+ 
+
+9.1  Process Flow Diagram 
+
+NA 
+ 
+
+ 
+
+9.2  Enhancement Specifications 
+ 
+Please find the attachment for the Mail Template to be used: 
+ 
+ 
+
+Alert Mail to 
+
+Logics to be applied to refer Persons to be notified: 
+
+ 
+ 
+
+Employee to update Nomination details based on the marital status change (Mail Triggering).doc
+
+ 
+
+ 
+
+ 
+
+ 
+
+•  Any  Change  in  the  table  PA0002 for  the field  “FAMST”  will  serve  as  the  trigger  to 
+
+send an alert mail to the employee. I.e., If the Employee’s Marital status (FAMST) is 
+
+changed from “0” or “2” or “3” or “4” or “5” or “6” or “9” to “1”, then the E-Mail will be 
+
+triggered to the employee. 
+
+ 
+
+•  Based  on  the  “PERNR”  Selected,  pass  the  “PERNR”  into  PA0002,  pick  the  return 
+
+value of the “ANRED” & pick the return value of the “ZOFFNAME” to get it displayed 
+
+in <<Title>> & <<Name of the Employee>> 
+
+•  Pass the “PERNR” & “USRTY” - 0010 into PA0105 table and pick the return value 
+
+(Mail ID) of the “USRID LONG” to trigger alert mail to the employee.. 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 19 of 23                                                                                     TCS – CIAL Confidential 
+
+10.  ADDITIONAL INFORMATION 
+ 
+
+10.1  Volume and Frequency 
+
+<Provide some information about the anticipated volume of data to be processed and the frequency the 
+program will run in batch mode or online (if applicable). 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+<Insert text> 
+
+ 
+
+10.2  Authorizations 
+
+<Outline  authorization  requirements  e.g.  mention  the  authorization  objects  to  be  checked  during 
+program processing. Due to this requirement the modification / creation of authorization roles might me 
+necessary. Capture such information here, when required. 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+<Insert text> 
+
+ 
+
+10.3  Error Handling Specifications 
+
+What are the business specifications/needs to handle the errors? 
+
+ 
+
+10.4  Additional Security Considerations 
+
+List any security considerations that are different than that specified in Section 1.4 or are not covered in 
+Section 1.4. 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 20 of 23                                                                                     TCS – CIAL Confidential 
+
+11.  UNIT TEST CASE SCENARIOS  
+ 
+
+<Provide a list of high-level test scenarios to be tested. The test results of all the following test cases 
+should be provided (in a spreadsheet) by the developer to the functional team.>  
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+<Insert text>  
+
+Case Scenario 
+
+Description 
+
+Table 4: Test Case Scenarios 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 21 of 23                                                                                     TCS – CIAL Confidential 
+
+A  Appendix 
+
+ 
+
+NA 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 22 of 23                                                                                     TCS – CIAL Confidential 
+
+B Naming Conventions 
+
+ 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distrubution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_HCM_FS_09_PA74-  Alert  Mail  to  Employee  to  update  Nomination  details  based  on  the  marital  status  change  (Mail  Triggering)
+ 
+Page 23 of 23                                                                                     TCS – CIAL Confidential 
+
+

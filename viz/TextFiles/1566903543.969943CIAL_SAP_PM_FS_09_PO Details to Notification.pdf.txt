@@ -1,0 +1,631 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+CIAL_SAP_PM_FS_09_PO DETAILS TO NOTIFICATION 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+Ebin Hope Joseph 
+
+26-06-2013  1 
+
+Released 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 2 of 11                                                                                     TCS – CIAL Confidential 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 3 of 11                                                                                     TCS – CIAL Confidential 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 5 
+
+2.  SCOPE .......................................................................................................................... 6 
+
+2.1 
+
+Assumptions ......................................................................................................... 6 
+
+2.2 
+
+Exclusions ............................................................................................................ 6 
+
+3.  DEVELOPMENT DETAILS ........................................................................................... 7 
+
+3.1 
+
+Program Details ..................................................................................................... 7 
+
+4.  ENHANCEMENTS ........................................................................................................ 8 
+
+4.1 
+
+4.2 
+
+Process Flow Diagram ............................................................................................. 8 
+
+Enhancement Specifications ..................................................................................... 8 
+
+4.3 
+
+Volume and Frequency ............................................................................................ 8 
+
+4.4 
+
+Authorizations ....................................................................................................... 8 
+
+4.5 
+
+4.6 
+
+Error Handling Specifications .................................................................................... 8 
+
+Additional Security Considerations ............................................................................. 8 
+
+5.  UNIT TEST CASE SCENARIOS................................................................................... 9 
+
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 4 of 11                                                                                     TCS – CIAL Confidential 
+
+1. OBJECTIVE 
+ 
+
+ 
+
+•  Report 
+
+• 
+
+Interfaces  
+
+•  Conversions 
+
+•  Enhancements 
+
+•  Forms 
+
+•  Workflow 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 5 of 11                                                                                     TCS – CIAL Confidential 
+
+2.  SCOPE  
+ 
+This  chapter  discusses  the  scope  of  development,  scope  exclusions  if  any  and 
+assumptions made by TCS with respect to implementation. 
+ 
+
+2.1  Assumptions 
+ 
+NA 
+
+ 
+
+ 
+
+2.2  Exclusions 
+ 
+ 
+NA 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 6 of 11                                                                                     TCS – CIAL Confidential 
+
+3. DEVELOPMENT DETAILS 
+ 
+
+3.1  Program Details 
+
+FS Description 
+
+Object Owner 
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+ 
+
+High 
+
+PM 
+
+ 
+
+ 
+
+Sap Existing Name 
+
+ 
+
+PO,Vendor Details to Notification 
+
+Date raised 
+
+26/06/2013 
+
+Expected date 
+
+ 
+
+Dev. object type 
+
+Enhancement 
+
+Oss note 
+
+ 
+
+Copy from 
+existing program                  
+Existing T. code 
+
+ 
+
+ 
+
+Type of Program 
+
+ Foreground 
+
+ 
+
+(The section below will be completed by the Technical team) 
+
+New Name 
+
+ 
+
+Transaction code 
+
+ 
+
+ 
+  
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 7 of 11                                                                                     TCS – CIAL Confidential 
+
+  
+
+4. ENHANCEMENTS 
+ 
+
+4.1  Process Flow Diagram 
+ 
+
+4.2  Enhancement Specifications 
+ 
+Transaction Code –IW21/IW22/IW28/IP30/IP10/IW31/IW32 
+ 
+Notification Types –M1,M2,M3,M4 
+ 
+Validations 
+
+ 
+Pass equipment number (EQUNR) through table ZPMD001 where  
+WARBEG < =ERDAT => WAREND or AMCBEG < =ERDAT => AMCEND. Get the LIFNR & 
+EBELN of the resulted entry. 
+ 
+Update LIFNR to the notification with PARVW=VN (Partner Function) 
+ 
+PO Number to VIQMEL-ZZEBELN 
+ 
+If user overwrites the value once automatically updated by the system then it shouldn’t be again 
+changed by the system at the time of next save. 
+ 
+ 
+
+4.3  Volume and Frequency 
+
+ 
+
+4.4  Authorizations 
+ 
+
+4.5  Error Handling Specifications 
+ 
+NA 
+
+4.6  Additional Security Considerations 
+ 
+
+NA 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 8 of 11                                                                                     TCS – CIAL Confidential 
+
+5. UNIT TEST CASE SCENARIOS  
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+Case Scenario 
+
+Description 
+
+Table 1: Test Case Scenarios 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 9 of 11                                                                                     TCS – CIAL Confidential 
+
+A  Appendix 
+
+ 
+
+<Include appendices when: 
+
+•  The volume of information would detract from the document format or be confusing. 
+
+• 
+
+• 
+
+Large table entries are involved. 
+
+Supporting information is relevant. 
+
+Ensure there is a 2-way reference between the appendix and the appropriate place in the document. 
+
+Include a glossary of any terms that may be unfamiliar to the audience of the document. 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 10 of 11                                                                                     TCS – CIAL Confidential 
+
+B Naming Conventions 
+
+ 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distribution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_PM_FS_09_PO Details to Notification 
+
+Page 11 of 11                                                                                     TCS – CIAL Confidential 
+
+

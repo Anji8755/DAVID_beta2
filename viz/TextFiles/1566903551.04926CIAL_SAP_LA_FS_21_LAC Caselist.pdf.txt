@@ -1,0 +1,1071 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+CIAL_SAP_LA_FS_21_LAC CASE LIST 
+ 
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+Gaayathri VL 
+
+13.02.2014 
+
+1.0 
+
+Created 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+LAC Case list 
+
+                                   Page 2 of 14                                                                              TCS Confidential 
+
+ 
+ 
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+LAC Case list 
+
+                                   Page 3 of 14                                                                              TCS Confidential 
+
+ 
+ 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 6 
+
+SCOPE ................................................................................................................................ 7 
+
+1.1 
+
+1.2 
+
+Assumptions ......................................................................................................... 7 
+
+Exclusion ............................................................................................................. 7 
+
+2.  DEVELOPMENT DETAILS ........................................................................................... 7 
+
+2.1 
+
+Program Details ..................................................................................................... 7 
+
+3.  REPORTS ..................................................................................................................... 7 
+
+3.1 
+
+Input ................................................................................................................... 7 
+3.1.1  Selection Parameters ........................................................................................................................ 7 
+
+3.2 
+
+Processing Logic Overview ....................................................................................... 8 
+
+3.3 
+
+Output ................................................................................................................. 8 
+3.3.1  Report Output Fields ......................................................................................................................... 8 
+3.3.2  Report Layout .................................................................................................................................... 9 
+
+3.4 
+
+Constraints ........................................................................................................... 9 
+
+4.  FORMS ......................................................................................................................... 9 
+
+4.1 
+
+Input ................................................................................................................... 9 
+4.1.1  Selection Parameters ........................................................................................................................ 9 
+
+4.2 
+
+4.3 
+
+Processing Logic Overview ...................................................................................... 10 
+
+Form Layout ........................................................................................................ 10 
+
+5.  CONVERSIONS .......................................................................................................... 11 
+
+5.1 
+
+5.2 
+
+5.3 
+
+5.4 
+
+Data System/Data Flow Diagram ............................................................................... 11 
+
+Type of Data to be Converted .................................................................................. 11 
+
+Logical Data Element Mapping .................................................................................. 11 
+
+Historical Data ...................................................................................................... 11 
+
+6. 
+
+INTERFACES ............................................................................................................. 11 
+
+6.1 
+
+Input .................................................................................................................. 11 
+Interface Parameters ....................................................................................................................... 11 
+
+6.1.1 
+
+6.2 
+
+6.3 
+
+6.4 
+
+Process/Data Flow Diagram ..................................................................................... 11 
+
+Logical Data Element Mapping .................................................................................. 11 
+
+Business Process Specifications ................................................................................ 11 
+
+7.  WORKFLOW .............................................................................................................. 11 
+
+7.1 
+
+Process/Data Flow Diagram ..................................................................................... 11 
+
+LAC Case list 
+
+                                   Page 4 of 14                                                                              TCS Confidential 
+
+ 
+ 
+7.2 
+
+Roles and Responsibilities ....................................................................................... 11 
+
+8.  ENHANCEMENTS ...................................................................................................... 11 
+
+8.1 
+
+8.2 
+
+Process Flow Diagram ............................................................................................ 11 
+
+Enhancement Specifications .................................................................................... 12 
+
+9.  ADDITIONAL INFORMATION .................................................................................... 12 
+
+9.1 
+
+9.2 
+
+9.3 
+
+9.4 
+
+Volume and Frequency ........................................................................................... 12 
+
+Authorizations ...................................................................................................... 12 
+
+Error Handling Specifications ................................................................................... 12 
+
+Additional Security Considerations ............................................................................ 12 
+
+10.  UNIT TEST CASE SCENARIOS................................................................................. 13 
+
+ 
+
+LAC Case list 
+
+                                   Page 5 of 14                                                                              TCS Confidential 
+
+ 
+ 
+1. OBJECTIVE 
+ 
+
+The objective of this report is to display the case list of an LAC. 
+
+•  Report 
+
+• 
+
+Interfaces  
+
+•  Conversions 
+
+•  Enhancements 
+
+•  Forms 
+
+•  Workflow 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+LAC Case list 
+
+                                   Page 6 of 14                                                                              TCS Confidential 
+
+ 
+ 
+
+ SCOPE  
+
+ 
+The scope is to allow the user to view case list associated with an LAC. 
+ 
+
+1.1  Assumptions 
+ 
+N/A 
+
+ 
+
+1.2  Exclusion 
+ 
+ 
+
+N/A 
+
+ 
+ 
+2. DEVELOPMENT DETAILS 
+ 
+
+2.1  Program Details 
+
+FS Description 
+
+LA: LAC Case list 
+
+Object Owner 
+
+Gaayathri VL 
+
+Date raised 
+
+18/02/2013           
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+ 
+Sap Existing Name 
+
+Type of Program 
+
+ 
+
+Medium 
+
+LA 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Expected date 
+
+          /          /           
+
+Dev. object type 
+
+REPORT 
+
+Oss note 
+
+ 
+
+Copy from 
+existing program                  
+
+ 
+
+Existing T. code 
+
+ 
+
+ Foreground 
+
+ Background 
+
+New Name 
+
+ 
+
+Transaction code  ZLAR16 
+
+3. REPORTS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+ 
+
+3.1 
+
+Input  
+
+ 
+
+ 
+
+3.1.1  Selection Parameters 
+
+LAC Case list 
+
+                                   Page 7 of 14                                                                              TCS Confidential 
+
+ 
+ 
+
+Field Text 
+
+SAP Table Field 
+
+Reference 
+
+Selection 
+
+Screen Type 
+(SO/PA/RB/
+
+CB) 
+
+Default 
+Values 
+
+ 
+
+Mandatory 
+
+LAR No. 
+
+Year 
+
+LAR Case List 
+
+LAA Case List 
+
+SLPC Case List 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+PA 
+
+PA 
+
+RB 
+
+RB 
+
+RB 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+3.2  Processing Logic Overview 
+ 
+Fetch LAR details from table ZFIH001. 
+For the LACs in ZFIH001, select LAC details from table ZFIH000. 
+For the above LACs select LAA details from table ZFIH003. 
+Select owner details from ZFID000 for the LAC Numbers fetched from table ZFIH003. 
+ Select evictee details by passing evictee numbers fetched from table ZFID000. 
+ 
+   Output 
+
+3.2.1  Report Output Fields 
+
+Field description 
+
+SAP Table-field name 
+
+Sl.No. 
+
+LAC Number 
+
+LAC File Number 
+
+Owner 
+
+LAR No 
+
+LAR File No. 
+
+Verdict Description 
+
+Verdict Date 
+
+FSD Status 
+
+FSD Date 
+4.  
+
+ 
+
+ZFIH000-LAC_NO 
+
+ZFIH000-LAC_FILE_NO 
+
+ZFID000-EVICTEE_NO 
+
+ZFIH001-LAR_NO 
+
+ZFIH001-LAR_FILE_NO 
+
+ZFIH003-DESCRIPTION 
+
+ZFIH003-DAT_OF_JUD 
+
+ZFIH001-FILE_STATUS 
+
+ZFIH001-RECDNG_DATE 
+
+LAC Case list 
+
+                                   Page 8 of 14                                                                              TCS Confidential 
+
+ 
+ 
+ 
+
+4.1.1  Report Layout 
+
+ 
+Output 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+4.2  Constraints 
+5. FORMS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+5.1 
+
+Input  
+
+ 
+
+ 
+
+5.1.1  Selection Parameters 
+
+LAC Case list 
+
+                                   Page 9 of 14                                                                              TCS Confidential 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Table 1: Selection Parameters for Forms 
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Sel. Type 
+(SO/PA/RB/
+
+Def 
+
+Value 
+
+Mandatory 
+
+Comments   <If any> 
+
+Reference 
+
+CB) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+5.2  Processing Logic Overview 
+
+ 
+
+ 
+
+5.3  Form Layout 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+Output format (Form Layout) as mentioned below.   
+
+Table 2: Form Details 
+
+Type of Printer (Forms) 
+
+  Dot Matrix 
+   Laser /Desk Jet/Zebra 
+
+Type of Paper Printout  (Forms) 
+
+Printing Requirements 
+
+(mandatory for programs 
+that produces a hard copy) 
+
+  Pre-printed form 
+  Regular Paper (as designed in the layout) 
+
+Paper Design (only for Forms) 
+
+Size of Paper  A4 
+
+Orientation  
+
+ Portrait 
+  Landscape 
+
+Logo  
+
+   To be added 
+
+ 
+
+Form Layout 
+
+(this should be an inserted 
+
+file as an ICON  that 
+
+contains the output display 
+of the program – e.g. excel 
+
+sheet format) 
+
+ 
+
+ 
+
+LAC Case list 
+
+                                   Page 10 of 14                                                                              TCS Confidential 
+
+ 
+ 
+6. CONVERSIONS 
+ 
+
+6.1  Data System/Data Flow Diagram 
+
+6.2  Type of Data to be Converted 
+ 
+
+6.3  Logical Data Element Mapping 
+ 
+
+6.4  Historical Data 
+ 
+7. INTERFACES 
+
+7.1 
+
+Input  
+
+7.1.1  Interface Parameters 
+
+ 
+
+ 
+ 
+ 
+
+7.2  Process/Data Flow Diagram 
+
+ 
+
+ 
+
+ 
+
+7.3  Logical Data Element Mapping 
+
+7.4  Business Process Specifications 
+ 
+8. WORKFLOW 
+
+8.1  Process/Data Flow Diagram 
+
+ 
+ 
+
+ 
+
+8.2  Roles and Responsibilities 
+
+ 
+
+9. ENHANCEMENTS 
+ 
+
+9.1  Process Flow Diagram 
+
+ 
+
+ 
+
+LAC Case list 
+
+                                   Page 11 of 14                                                                              TCS Confidential 
+
+ 
+ 
+9.2  Enhancement Specifications 
+ 
+ 
+10.  ADDITIONAL INFORMATION 
+ 
+
+10.1  Volume and Frequency 
+
+ 
+
+10.2  Authorizations 
+
+ 
+
+10.3  Error Handling Specifications 
+
+What are the business specifications/needs to handle the errors? 
+
+ 
+
+10.4  Additional Security Considerations 
+
+List any security considerations that are different than that specified in Section 1.4 or are not covered in 
+Section 1.4. 
+
+ 
+
+LAC Case list 
+
+                                   Page 12 of 14                                                                              TCS Confidential 
+
+ 
+ 
+11.  UNIT TEST CASE SCENARIOS  
+ 
+
+Case Scenario 
+
+Description 
+
+Table 3: Test Case Scenarios 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+LAC Case list 
+
+                                   Page 13 of 14                                                                              TCS Confidential 
+
+ 
+ 
+
+ 
+
+  
+
+ 
+
+A  Appendix 
+
+B Naming Conventions 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distrubution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+LAC Case list 
+
+                                   Page 14 of 14                                                                              TCS Confidential 
+
+

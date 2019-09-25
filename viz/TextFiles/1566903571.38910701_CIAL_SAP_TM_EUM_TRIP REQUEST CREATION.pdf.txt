@@ -1,0 +1,827 @@
+ 
+SAP IMPLEMENTATION  
+ 
+END USER MANUAL 
+ 
+ 
+ 
+ 
+ 
+
+                                                          CIAL_SAP_TM_TRIP REQUEST CREATION 
+
+ 
+
+  
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+
+                    Confidential                                                         1 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                ABBREVATIONS 
+
+ABBREVATION 
+
+DESCRIPTION 
+
+CIAL 
+
+ 
+
+Cochin International Airport Ltd. 
+
+ 
+
+ 
+
+                CHANGE HISTORY 
+
+Description 
+
+Created by 
+
+Date 
+
+Versi
+on 
+
+Reviewed 
+by 
+
+Date 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         2 
+
+ 
+ 
+ 
+
+ Table of Contents 
+
+1.  Creation of Trip Request: 
+2.  To enter additional location details 
+3.  To create  advance request 
+4.  To attach any document 
+5.  To send the travel request for approval 
+6.  To view the Trip request details   
+7.  To view the approval status 
+ 
+ 
+
+4 
+9 
+13 
+15 
+15 
+16 
+19 
+
+                    Confidential                                                         3 
+
+ 
+
+1.  Creation of Trip Request: 
+ 
+ 
+ 
+
+Overview 
+
+ 
+Manual Procedure: 
+ 
+A travel request is an information entity that contains all the data that a traveler wants to 
+forward for approval/advance payment or that a manager needs to know before approving a 
+trip.  
+ 
+Procedural Steps. 
+
+To create a Travel request the traveler needs to login to ESS system. 
+ 
+
+ 
+
+ 
+
+Click on 
+ 
+We will get below screen  
+
+.  
+
+ 
+
+                    Confidential                                                         4 
+
+Click on this Tab 
+to create  Trip 
+Request 
+
+ 
+
+ 
+Then we will get below screen. 
+
+ 
+OR 
+ 
+Click on Travel Work Center 
+
+ 
+
+                    Confidential                                                         5 
+
+ 
+ 
+Then we will get below screen. 
+
+ 
+
+ 
+
+ 
+
+Under All My Travel Requests Click on 
+
+ 
+
+On screen “Create Travel Request enter information in the fields as specified in the table 
+
+below: 
+
+ 
+ 
+ 
+ 
+ 
+ 
+Field  Name 
+
+Description 
+
+R/O/C  User Action and 
+
+Travel Mode 
+
+Mode of Travel-mode of  R 
+
+Values 
+Select the 
+
+Comments 
+ 
+ 
+
+                    Confidential                                                         6 
+
+transportation - air, bus, 
+train, and so on. 
+
+Travel Class 
+
+Travel Class –Economy 
+/Business etc 
+ 
+
+Start Date /Time 
+
+End Date / Time  
+
+Trip Start date 
+/Scheduled departure 
+time 
+ 
+Trip end date /time.  
+ 
+
+appropriate 
+mode of travel 
+from the drop 
+down 
+Select the 
+appropriate 
+Travel Class l 
+from the drop 
+down  
+Select Scheduled 
+departure date 
+and enter the 
+time. 
+Select  trip end 
+date  and arrival 
+time  
+
+ 
+
+ 
+
+ 
+
+R  
+ 
+
+R 
+
+R 
+
+ 
+(Note: On above table, in column “R/O/C”: “R” = Required, “O” = Optional, “C” = 
+Conditional) 
+ 
+ 
+ 
+
+ 
+ 
+
+To add destination details click on the button   
+ 
+Then we will get below screen  
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         7 
+
+ 
+
+ 
+ 
+
+ 
+
+Click on the button to search locations  
+ 
+It will go to the next screen as under. Enter the location details as shown below 
+ 
+
+ 
+
+ 
+ 
+
+Click on 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Select and click on Ok button and will get below screen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         8 
+
+ 
+ 
+ 
+Field  Name 
+
+Description 
+
+R/O/C  User Action and 
+
+ 
+
+Country/Region 
+
+Travel country 
+
+R 
+
+State 
+
+Travel  
+ 
+ 
+ 
+
+City /Postal code 
+
+Street Address  
+
+Enter name of city 
+ 
+Enter street address 
+ 
+
+R  
+ 
+
+R 
+
+O 
+
+Values 
+Select the 
+appropriate 
+travel country 
+from the drop 
+down 
+Select the 
+appropriate 
+Travel Class l 
+from the drop 
+down  
+ 
+
+ 
+
+Comments 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+(Note: On above table, in column “R/O/C”: “R” = Required, “O” = Optional, “C” = 
+Conditional) 
+ 
+
+Click on 
+ 
+
+ 
+
+2.  To enter additional location details  
+ 
+
+Then  Click on  
+trip. 
+ 
+While clicking on this we will get below screen 
+ 
+ 
+
+ button if the traveler travels multiple location  in a 
+
+                    Confidential                                                         9 
+
+Enter  here 
+ending date and 
+ending time at 
+current location 
+
+ 
+
+Select the last line item change the date and time   and Click on  
+ 
+We will get below pop up 
+ 
+
+ 
+
+ button . 
+
+ 
+
+ 
+
+Click on 
+ 
+ 
+ 
+Field  Name 
+
+Description 
+
+R/O/C  User Action and 
+
+Country/Region 
+
+Travel country 
+
+R 
+
+State 
+
+Travel  
+ 
+ 
+ 
+
+R  
+ 
+
+Values 
+Select the 
+appropriate 
+travel country 
+from the drop 
+down 
+Select the 
+appropriate 
+Travel Class l 
+from the drop 
+
+Comments 
+ 
+ 
+
+ 
+
+                    Confidential                                                         10 
+
+City /Postal code 
+
+Street Address  
+
+Enter name of city 
+ 
+Enter street address 
+ 
+
+R 
+
+O 
+
+down  
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+If  the traveler wants to add  more than one additional locations then click on 
+
+ 
+We will get below screen 
+
+  otherwise click on 
+
+ 
+
+ 
+ 
+
+Again click on 
+It will go to next screen as shown below . 
+ 
+ 
+
+ as highlighted above. 
+
+ 
+
+                    Confidential                                                         11 
+
+ 
+On screen “Additional Informatio”, enter information in the fields as specified in the table 
+below: 
+Field Name  
+ 
+Activity 
+(Planning): 
+
+R/O/C  
+ 
+O 
+ 
+
+Description  
+ 
+Mention the purpose 
+of Travel  
+ 
+
+User Action and Values  
+ 
+Select the appropriate 
+purpose of travel from 
+dropdown 
+ 
+ 
+
+ 
+
+Reason 
+
+Comment 
+
+Enter the detail 
+reason of travel 
+
+O 
+
+  
+Enter the appropriate 
+comment if required 
+
+O 
+
+ 
+
+ 
+
+(Note: On Above table in column “R/O/C”, “R” = Required, “O” = Optional, “C” = 
+Conditional) 
+
+                    Confidential                                                         12 
+
+Click on enter 
+advances if 
+requires 
+
+ 
+
+ 
+
+3.  To create  advance request   
+ 
+
+If we click on 
+ 
+
+ and will get below screen 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         13 
+
+ 
+ 
+ 
+ 
+Field Name  
+ 
+Amount  
+
+Currency 
+
+Cash 
+
+ 
+ 
+
+Click on
+ 
+
+Description  
+ 
+Mention the advance 
+amount required 
+ 
+Select the 
+appropriate currency 
+from drop down 
+Select Cash  option  
+
+ 
+
+R/O/C  
+ 
+R 
+ 
+
+User Action and Values  
+ 
+ 
+
+R 
+
+R 
+
+ 
+
+ 
+
+ . Then system automatically go to General data screen 
+
+Click on attachment  if any 
+documents need to attach 
+along with trip request  
+
+ 
+
+ 
+
+ 
+
+Click on 
+ 
+We will get highlighted message one the trip request get saved . 
+ 
+
+                    Confidential                                                         14 
+
+ 
+
+4.  To attach any document  
+
+If any document needs to attach along with trip request click on 
+ 
+We will get below screen  
+ 
+
+ 
+
+ 
+
+ 
+
+Click on  
+
+ 
+
+ 
+
+ 
+
+ then select the required document and click on 
+
+5.  To send the travel request for approval  
+
+To send the travel request for approval click on 
+
+ 
+
+                    Confidential                                                         15 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+6.  To view the Trip request details  click on  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+To view the Trip request details  
+
+ click on 
+
+ 
+
+ 
+ 
+
+                    Confidential                                                         16 
+
+ 
+ 
+ 
+ 
+Go to final Action Tab and select Save draft/save and send for approval  
+ 
+If the user wants to sent for approval then select save and send for approval radio button 
+as highlighted above  
+
+ 
+
+                    Confidential                                                         17 
+
+ 
+
+Click on 
+
+ 
+
+ the we will get below screen  
+
+ 
+
+ 
+
+                    Confidential                                                         18 
+
+ 
+ 
+
+7.  To view the approval status 
+
+ Select the required Trip Request and click on 
+
+ 
+We will get below screen  
+ 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         19 
+
+

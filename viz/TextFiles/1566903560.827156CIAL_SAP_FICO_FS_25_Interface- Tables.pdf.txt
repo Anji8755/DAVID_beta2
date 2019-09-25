@@ -1,0 +1,1254 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+CIAL_SAP_FICO_FS_25_INTERFACES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+Martin 
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+26.03.2013 
+
+1.0 
+
+Created 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+Interface 
+
+Page 2 of 16                                                                                     TCS – CIAL Confidential 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+Interface 
+
+Page 3 of 16                                                                                     TCS – CIAL Confidential 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 6 
+
+2.  SCOPE .......................................................................................................................... 7 
+
+2.1 
+
+2.2 
+
+Assumptions ......................................................................................................... 7 
+
+Exclusions ............................................................................................................ 7 
+
+3.  DEVELOPMENT DETAILS ........................................................................................... 7 
+
+3.1 
+
+Program Details ..................................................................................................... 7 
+
+4.  REPORTS ..................................................................................................................... 7 
+
+4.1 
+
+Input ................................................................................................................... 8 
+4.1.1  Selection Parameters ........................................................................................................................ 8 
+
+4.2 
+
+Processing Logic Overview ....................................................................................... 8 
+
+4.3 
+
+Output ................................................................................................................. 8 
+4.3.1  Report Output Fields ......................................................................................................................... 8 
+4.3.2  Report Layout .................................................................................................................................... 8 
+
+4.4 
+
+Constraints ........................................................................................................... 8 
+
+5.  FORMS ......................................................................................................................... 8 
+
+5.1 
+
+Input ................................................................................................................... 8 
+5.1.1  Selection Parameters ........................................................................................................................ 8 
+
+5.2 
+
+5.3 
+
+Processing Logic Overview ....................................................................................... 8 
+
+Form Layout ......................................................................................................... 9 
+
+6.  CONVERSIONS .......................................................................................................... 10 
+
+6.1 
+
+6.2 
+
+6.3 
+
+6.4 
+
+Data System/Data Flow Diagram ............................................................................... 10 
+
+Type of Data to be Converted .................................................................................. 10 
+
+Logical Data Element Mapping .................................................................................. 10 
+
+Historical Data ...................................................................................................... 10 
+
+7. 
+
+INTERFACES ............................................................................................................. 10 
+
+7.1 
+
+Input .................................................................................................................. 10 
+Interface Parameters ....................................................................................................................... 10 
+
+7.1.1 
+
+7.2 
+
+7.3 
+
+7.4 
+
+Process/Data Flow Diagram ..................................................................................... 10 
+
+Logical Data Element Mapping .................................................................................. 10 
+
+Business Process Specifications ................................................................................ 10 
+
+8.  WORKFLOW .............................................................................................................. 10 
+
+8.1 
+
+Process/Data Flow Diagram ..................................................................................... 10 
+
+Interface 
+
+Page 4 of 16                                                                                     TCS – CIAL Confidential 
+
+8.2 
+
+Roles and Responsibilities ....................................................................................... 10 
+
+9.  ENHANCEMENTS ...................................................................................................... 10 
+
+9.1 
+
+9.2 
+
+Process Flow Diagram ............................................................................................ 10 
+
+Enhancement Specifications .................................................................................... 11 
+
+10.  ADDITIONAL INFORMATION .................................................................................... 12 
+
+10.1  Volume and Frequency ........................................................................................... 12 
+
+10.2  Authorizations ...................................................................................................... 13 
+
+10.3  Error Handling Specifications ................................................................................... 13 
+
+10.4  Additional Security Considerations ............................................................................ 13 
+
+11.  UNIT TEST CASE SCENARIOS................................................................................. 14 
+
+ 
+
+Interface 
+
+Page 5 of 16                                                                                     TCS – CIAL Confidential 
+
+1. OBJECTIVE 
+ 
+
+The new tables is to be developed for mapping of  cargo invoice type to SAP Document 
+type and tax code of cargo software to tax code of SAP and Cargo agent to SAP Customer  
+number. 
+
+•  Report 
+
+• 
+
+Interfaces  
+
+•  Conversions 
+
+•  Enhancements 
+
+•  Forms 
+
+•  Workflow 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+Interface 
+
+Page 6 of 16                                                                                     TCS – CIAL Confidential 
+
+ SCOPE  
+
+The requirement is to develop new tables for mapping of cargo invoice type to SAP 
+Document type and tax code of cargo software to tax code of SAP and Cargo agent to 
+SAP Customer number. 
+
+ 
+ 
+
+1.1  Assumptions 
+ 
+N/A 
+
+ 
+
+1.2  Exclusion 
+ 
+ 
+
+N/A 
+
+ 
+ 
+ 
+ 
+2. DEVELOPMENT DETAILS 
+ 
+
+2.1  Program Details 
+
+Tables for mapping of cargo invoice type to SAP Document 
+type and tax code of cargo software to tax code of SAP and 
+Cargo agent to SAP Customer number. 
+
+Date raised 
+
+18/02/2013           
+
+Expected date 
+
+     /     /      
+
+Dev. object type 
+
+Enhancements 
+
+Oss note 
+
+ 
+
+Copy from 
+existing program                  
+
+ 
+
+FS Description 
+
+Object Owner 
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+ 
+Sap Existing Name 
+
+Type of Program 
+
+ 
+Martin 
+
+Low 
+
+FI 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Existing T. code 
+
+ Foreground 
+
+ Background 
+
+(The section below will be completed by the Technical team) 
+
+New Name 
+
+ 
+
+Transaction code 
+
+3. REPORTS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+ 
+
+ 
+
+ 
+
+Interface 
+
+Page 7 of 16                                                                                     TCS – CIAL Confidential 
+
+3.1 
+
+Input  
+
+3.1.1  Selection Parameters 
+
+ 
+
+ 
+ 
+
+3.2  Processing Logic Overview 
+
+3.3  Output 
+
+3.3.1  Report Output Fields 
+
+ 
+
+3.3.2  Report Layout 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+3.4  Constraints 
+4. FORMS 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+4.1 
+
+Input  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+4.1.1  Selection Parameters 
+
+Table 1: Selection Parameters for Forms 
+
+SAP Table 
+
+Field Text 
+
+Field 
+
+Sel. Type 
+(SO/PA/RB/
+
+Def 
+
+Value 
+
+Mandatory 
+
+Comments   <If any> 
+
+Reference 
+
+CB) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+4.2  Processing Logic Overview 
+
+ 
+
+ 
+
+Interface 
+
+Page 8 of 16                                                                                     TCS – CIAL Confidential 
+
+4.3  Form Layout 
+
+Note:  This section should be filled out for each relevant component. 
+
+This section may be marked N/A if it is not relevant. 
+
+Output format (Form Layout) as mentioned below.   
+
+Table 2: Form Details 
+
+Type of Printer (Forms) 
+
+  Dot Matrix 
+   Laser /Desk Jet/Zebra 
+
+Type of Paper Printout  (Forms) 
+
+Printing Requirements 
+
+(mandatory for programs 
+that produces a hard copy) 
+
+  Pre-printed form 
+  Regular Paper (as designed in the layout) 
+
+Paper Design (only for Forms) 
+
+Size of Paper  A4 
+
+Orientation  
+
+ Portrait 
+  Landscape 
+
+Logo  
+
+   To be added 
+
+ 
+
+Form Layout 
+
+(this should be an inserted 
+
+file as an ICON  that 
+
+contains the output display 
+of the program – e.g. excel 
+
+sheet format) 
+
+ 
+
+ 
+
+ 
+
+Interface 
+
+Page 9 of 16                                                                                     TCS – CIAL Confidential 
+
+5. CONVERSIONS 
+ 
+
+5.1  Data System/Data Flow Diagram 
+
+5.2  Type of Data to be Converted 
+ 
+
+5.3  Logical Data Element Mapping 
+ 
+
+5.4  Historical Data 
+ 
+6. INTERFACES 
+
+6.1 
+
+Input  
+
+6.1.1  Interface Parameters 
+
+ 
+
+ 
+ 
+ 
+
+6.2  Process/Data Flow Diagram 
+
+ 
+
+ 
+
+ 
+
+6.3  Logical Data Element Mapping 
+
+6.4  Business Process Specifications 
+ 
+7. WORKFLOW 
+
+7.1  Process/Data Flow Diagram 
+
+ 
+ 
+
+ 
+
+7.2  Roles and Responsibilities 
+
+ 
+
+8. ENHANCEMENTS 
+ 
+
+8.1  Process Flow Diagram 
+
+ 
+
+ 
+
+Interface 
+
+Page 10 of 16                                                                                     TCS – CIAL Confidential 
+
+8.2  Enhancement Specifications 
+The requirement is to develop a new tables for mapping of cargo invoice type to SAP 
+Document type and tax code of cargo software to tax code of SAP and Cargo agent to 
+SAP Customer number. 
+
+ 
+
+The following tables have to be developed: 
+
+ 
+FIELD NAME 
+
+Type 
+ Invoice Type 
+
+SAP Document 
+type 
+Validity Start 
+Date 
+Validity End Date 
+ 
+ 
+FIELD NAME 
+
+Type 
+Tax code  
+
+FIELD TYPE 
+
+TECHINCAL 
+FIELD NAME 
+ 
+ 
+DOCUMENT_TYPE      
+CHAR 
+(  cargo Software ) 
+BKPF—BLART 
+
+CHAR 
+
+ 
+
+ 
+
+DATS 
+
+DATS 
+
+FIELD 
+LENGTH 
+1 
+2 
+
+2 
+
+8 
+
+8 
+
+FIELD STATUS 
+
+Mandatory 
+Mandatory 
+
+Mandatory 
+
+Mandatory 
+
+Mandatory 
+
+FIELD TYPE 
+
+FIELD LENGTH 
+
+FIELD STATUS 
+
+TECHINCAL 
+FIELD NAME 
+ 
+TAX_CODE— 
+(  Cargo 
+Software ) 
+
+ 
+CHAR 
+
+  CHAR 
+DATS 
+
+DATS 
+
+TECHINCAL FIELD 
+NAME 
+ 
+ACCOUNT ( Cargo 
+Software) 
+KUNNR 
+
+ 
+
+Tax code of SAP  MWSKZ 
+Validity Start 
+Date 
+Validity End Date 
+ 
+ 
+FIELD NAME 
+
+ 
+
+Type 
+Customer 
+
+SAP Customer 
+Number 
+Validity Start Date 
+Validity End Date 
+ 
+FIELD NAME 
+
+Type 
+Employee ID 
+SAP User ID 
+
+ 
+ 
+
+TECHINCAL 
+FIELD NAME 
+ 
+PERNR 
+USR01--
+
+1 
+2 
+
+2 
+8 
+
+8 
+
+Mandatory 
+Mandatory 
+
+Mandatory 
+Mandatory 
+
+Mandatory 
+
+FIELD TYPE 
+
+ 
+CHAR 
+
+CHAR 
+
+DATS 
+DATS 
+
+FIELD 
+LENGTH 
+1 
+10 
+
+10 
+
+8 
+8 
+
+FIELD STATUS 
+
+Mandatory 
+Mandatory 
+
+Mandatory 
+
+Mandatory 
+Mandatory 
+
+FIELD TYPE 
+
+FIELD LENGTH 
+
+FIELD STATUS 
+
+ 
+NUM 
+CHAR 
+
+1 
+8 
+10 
+
+Mandatory 
+Mandatory 
+Mandatory 
+
+Interface 
+
+Page 11 of 16                                                                                     TCS – CIAL Confidential 
+
+BNAME 
+ 
+
+CHAR 
+
+50 
+
+Mandatory 
+
+TECHINCAL FIELD 
+NAME 
+ 
+ACCOUNT ( Cargo 
+Software) 
+LIFNR 
+
+ 
+ 
+
+TECHINCAL FIELD 
+NAME 
+ 
+SAKNR 
+
+ 
+
+ 
+ 
+
+FIELD TYPE 
+
+ 
+CHAR 
+
+CHAR 
+
+DATS 
+DATS 
+
+FIELD TYPE 
+
+ 
+CHAR 
+
+CHAR 
+
+DATS 
+DATS 
+
+FIELD 
+LENGTH 
+1 
+10 
+
+10 
+
+8 
+8 
+
+FIELD 
+LENGTH 
+1 
+10 
+
+10 
+
+8 
+8 
+
+FIELD STATUS 
+
+Mandatory 
+Mandatory 
+
+Mandatory 
+
+Mandatory 
+Mandatory 
+
+FIELD STATUS 
+
+Mandatory 
+Mandatory 
+
+Mandatory 
+
+Mandatory 
+Mandatory 
+
+E-Mail ID 
+ 
+ 
+FIELD NAME 
+
+Type 
+Vendor 
+
+SAP Vendor 
+Number 
+Validity Start Date 
+Validity End Date 
+ 
+ 
+FIELD NAME 
+
+Type 
+GL Account 
+Number 
+SAP GL Account 
+Number 
+Validity Start Date 
+Validity End Date 
+ 
+ 
+ 
+Validations: 
+ 
+
+ 
+
+•  The field Name “Type” should consist of a dropdown list of  
+
+International Cargo 
+
+o 
+o  Domestic Cargo 
+o  Duty Free 
+
+ 
+
+•  User should not be able to enter duplicate entry. 
+•  User should be able to change the Validity start date and end date of a line item. 
+
+ 
+9. ADDITIONAL INFORMATION 
+ 
+
+9.1  Volume and Frequency 
+
+ 
+
+Interface 
+
+Page 12 of 16                                                                                     TCS – CIAL Confidential 
+
+9.2  Authorizations 
+
+ 
+
+9.3  Error Handling Specifications 
+
+What are the business specifications/needs to handle the errors? 
+
+ 
+
+9.4  Additional Security Considerations 
+
+List any security considerations that are different than that specified in Section 1.4 or are not covered in 
+Section 1.4. 
+
+ 
+
+Interface 
+
+Page 13 of 16                                                                                     TCS – CIAL Confidential 
+
+10.  UNIT TEST CASE SCENARIOS  
+ 
+
+Table 3: Test Case Scenarios 
+
+Description 
+
+Case Scenario 
+
+Case 1  
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Interface 
+
+Page 14 of 16                                                                                     TCS – CIAL Confidential 
+
+A  Appendix 
+
+ 
+
+  
+
+ 
+
+Interface 
+
+Page 15 of 16                                                                                     TCS – CIAL Confidential 
+
+B Naming Conventions 
+
+ 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distrubution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+Interface 
+
+Page 16 of 16                                                                                     TCS – CIAL Confidential 
+
+

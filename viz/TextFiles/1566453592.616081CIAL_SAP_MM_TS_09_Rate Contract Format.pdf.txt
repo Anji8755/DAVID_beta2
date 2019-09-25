@@ -1,0 +1,750 @@
+ 
+SAP IMPLEMENTATION  
+ 
+TECHNICAL SPECIFICATION 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+CIAL_SAP_MM_TS_09_RATE CONTRACT FORMAT 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+DESCRIPTION 
+
+CIAL 
+
+Cochin International Airport Ltd. 
+
+ 
+ 
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DOCUMENT 
+
+FS 
+
+ 
+
+ 
+ 
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+Sreekanth S 
+
+CREATIO
+N DATE 
+
+17/08/13 
+
+AMENDED BY 
+
+DATE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+DOCUMENT NAME 
+
+CIAL_SAP_MM_FS_09_Rate Contract Format 
+
+ 
+
+VERSIO
+
+N 
+
+1.0 
+VERSIO
+
+N 
+
+ 
+
+ 
+
+STATUS 
+
+REMARKS 
+
+ 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CHANGES 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+ 
+ 
+DISTRIBUTION 
+ 
+
+COMPANY 
+
+CIAL 
+
+TCS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+SIGNOFF 
+ 
+COMPANY 
+
+ 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+ 
+
+NAME 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+DESIGNATION 
+
+SIGNATURE 
+
+ 
+
+ 
+
+Page 3 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+ 
+
+TABLE OF CONTENTS
+
+     ......................................................................................................................................1 
+
+ABBREVATIONS .......................................................................................... 2 
+DOCUMENT REFERENCES ....................................................................... 2 
+CHANGE HISTORY ..................................................................................... 2 
+DISTRIBUTION ............................................................................................ 2 
+REVIEW  ....................................................................................................... 3 
+SIGNOFF ....................................................................................................... 3 
+
+1  Assumptions ............................................................................................................ 5 
+
+2  Exclusions ............................................................................................................... 5 
+
+3  Program Header ....................................................................................................... 5 
+
+4 Summary ................................................................................................................. 6 
+
+5 Input  ...................................................................................................................... 6 
+3.1.1Selection Parameters - NA................................................................................................................. 6 
+3.1.2Data Source - NA ............................................................................................................................... 6 
+3.1.3Interfaces - NA ................................................................................................................................... 6 
+
+6 Process Map - NA ....................................................................................................... 6 
+
+7 Processing Logic ........................................................................................................ 6 
+
+8 Output .................................................................................................................... 8 
+
+9 Technical Constraints .................................................................................................. 9 
+
+10 Performance, Volume and Frequency ........................................................................... 9 
+
+11 Authorization Considerations ...................................................................................... 9
+
+ 
+
+Page 4 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+ 
+
+1. OBJECTIVE 
+
+ 
+Form development for Contract. 
+ 
+
+2. SCOPE  
+
+2  Assumptions 
+
+ 
+NA 
+
+ 
+
+3 
+
+ Exclusions 
+
+ 
+NA 
+ 
+ 
+
+3. DEVELOPMENT TECHNICAL DESCRIPTION 
+
+ 
+
+4 
+
+ Program Header 
+
+Title 
+
+ Rate Contract Form 
+
+Requesting Person 
+
+Dayanand 
+
+Date raised 
+
+17/08/13 
+
+ 
+
+ 
+
+ 
+Complexity 
+
+ 
+Package 
+
+ 
+Program Tool  
+
+ 
+SAP Std modify 
+
+ 
+
+Oss note 
+
+ 
+New Program 
+
+ 
+Copy from existing 
+
+ 
+  
+Existing Name 
+
+Medium 
+
+ZMM00 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Expected date 
+
+ 
+
+ 
+Dev. object scope 
+
+ 
+SAP Module 
+
+ 
+SAP program name 
+
+  
+
+Message Class 
+
+ 
+Modification 
+
+Transport Request 
+No 
+Existing T. code 
+ 
+ Regular paper 
+
+Form 
+
+MM 
+
+PGM : ZMM_CO_PRINT 
+SF: ZMMSF_CONTRACT_FORM 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+program                   
+ 
+Forms 
+
+ Pre-printed       
+
+ 
+Logo  
+
+ To be added 
+
+ 
+Type of Program 
+
+ Foreground      
+
+ Background 
+
+ 
+ 
+
+New Name 
+
+ 
+
+ 
+
+Transaction code 
+
+ 
+
+Page 5 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+ 
+
+ 
+
+5  Summary 
+ 
+
+6  Input  
+ 
+
+3.1.1  Selection Parameters - NA 
+
+3.1.2  Data Source - NA 
+
+3.1.3  Interfaces - NA 
+
+ 
+
+7  Process Map - NA 
+ 
+
+8  Processing Logic 
+ 
+
+1.  Contract no to be printed on form as Purchasing Group/Contract No.”   
+
+a.  Check for document category as “K” EKKO-BSTYP for contract. 
+
+b.  Purchasing group to be taken from EKKO-EKGRP. 
+
+c.  Get  EKKO-EBELN  as  contract  no.  Where  EKKO-EBELN=contract  no.  in 
+
+question. 
+
+d.  Contract  No.  to  appear  on  top  of  all  pages  (from  2nd  page  onwards)  of 
+
+contract number with page number in “Page 1of n” format 
+
+e.  Contract heading to be printed as “Rate contract”  
+
+ 
+
+2.  Get EKKO-BEDAT as contract Date where EKKO-EBELN=Contract no. in question 
+
+3.  Vendor address: 
+
+  Get vendor address from ADRNR of table LFA1 where LFA1-LIFNR=EKKO-
+
+LIFNR and EKKO-EBELN= PO no  
+  Get Title = “ANRED” from LFA1 
+  Pass ADRNR from LFA1 to ADRC and get 
+
+Name = “NAME1”+”NAME2”(Concatenate name1 and name 2) 
+For address get following details from “ADRC”  
+“STREET2”, 
+”STREET3”, 
+”STREET”, 
+”STREET4” 
+Address should be in the sequence above  
+District = “CITY2” 
+City & Postal code should be displayed as City-Postal code where 
+City = “CITY1” 
+Postal code = “POST_CODE1” 
+PO Box = “PO_BOX” 
+
+Page 6 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+ 
+
+  Region = “REGION”. For this pass “LFA1-LAND1”  and “LFA1-REGIO’ to 
+
+“VT005S = LAND1”  and“VT005S = BLAND”   
+
+  Country = Display full name of country. For this get “LAND1” from “LFA1” 
+
+and get country description(V_T005- LANDX) 
+
+  Telephone number = “LFA1-TELF1” 
+  Mobile number = “LFA1-TELF2”. 
+  Email id :- Get LIFNR-ADRNR from “LFA1” for this vendor and pass on this 
+
+value to table ADR6 to get  
+  email id(ADR6-SMTP_ADDR) 
+ 
+
+If any of the value is blank in above fields, then the field name should not 
+be displayed 
+
+  Subject:-“Name of Work” from contract header text 
+
+  Get EKPO-ANFPR as vendor's quotation no.(RFQ) where EKPO-
+
+EBELN=contract no in question. Print EKPO-ANFPR. (To be printed Only if 
+details are available) 
+
+  Value of work:-Contract value 
+
+  Print 
+
+4.  Text from Contract header text without name of header text 
+5.  LOI details:-Text in Contract header text “LOI details” 
+6.  Scope of Work: - Text in Contract header text “Scope of Work” 
+7.  Print 
+
+Taxes & Duties: - Text in Contract header text “Taxes & Duties” 
+Completion Period: - Text in Contract header text “Completion Period” 
+Terms of Payment: - Text in Contract header text “Terms of Payment” 
+Security Deposit: - Text in Contract header text “Security Deposit” 
+Delivery schedule: - Text in Contract header text “Delivery schedule” 
+Warranty: - Text in Contract header text “Warranty” 
+AMC Conditions: - Text in Contract header text “AMC Conditions” 
+Safety Requirements: - Text in Contract header text “Safety Requirements” 
+Security Regulations: - Text in Contract header text “Security Regulations” 
+Statutory Regulations: - Text in Contract header text “Statutory Regulations” 
+Agreement details: - Text in Contract header text “Agreement details” 
+General:- Text in Contract header text “General” 
+(To be printed only if details are available) 
+
+ 
+
+8.  Print “Thanking You,” 
+9.  Print “Yours faithfully”  
+10. Print “For Cochin International Airport Ltd” 
+11. Print Name of final approver  
+12. Print Designation of final approver 
+13. Schedule of Quantity (This should be printed starting from new page). 
+
+Material item in Rate Contract 
+Rate Contract item Number 
+Pass EBELP in EKPO and get the below details 
+Description(Short text in Rate Contract) 
+Long text 
+
+ 
+ 
+EKPO-EBELP 
+ 
+TXZ01 
+
+Page 7 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+ 
+
+UOM 
+Total Amount 
+ 
+Service with item category "d" in Rate Contract 
+Rate Contract item Number  
+Pass EBELP in EKPO and get the below details 
+Description(Short text in Rate Contract) 
+Against Rate Contract line item number above 
+only short text should come  
+Next line It should show service line item 
+number offsetting to the right Rate Contract line 
+item no("EXTROW".,UOM,Qty, 
+Logic to fetch 
+Get "PACKNO" from "EKPO" and pass to "ESLL" 
+and get "SUB_PACKNO" 
+Pass " "SUB_PACKNO" to table "ESLL" and get 
+"PACKNO" and "EXTROW" 
+Corresponding to  "PACKNO" and "EXTROW" get 
+"MENGE","MEINS","NETWR" and "KTEXT1" from 
+"ESLL" 
+Get the lontext from service long text of the 
+service line item in PO and this should be printed 
+in a new line below the service short text. 
+
+Material PO Text from PO for  
+the above line item 
+MEINS 
+NETPR 
+ 
+ 
+EKPO-EBELP 
+ 
+
+TXZ01 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Print only the undeleted line items. EKPO- LOEKZ  is null. 
+ 
+Contract Line Item No. 
+Material Short Text/Service short text: 
+Long Text  
+Unit of Measure 
+Rate in RS:  
+ 
+
+ 
+
+9  Output 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 8 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+Contract format.xls 
+
+10 Technical Constraints 
+ 
+
+11 Performance, Volume and Frequency 
+ 
+
+12 Authorization Considerations 
+ 
+
+ 
+
+4.Unit Test Case scenarios 
+
+Page 9 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+ 
+
+Appendix 
+
+Page 10 of 10 
+
+                                                          
+
+TCS–CIAL Confidential 
+
+

@@ -1,0 +1,1953 @@
+ 
+SAP IMPLEMENTATION  
+ 
+END USER MANUAL 
+ 
+ 
+ 
+ 
+ 
+
+                                                         < CIAL_EUM_<PRICE>_<MASTER DATA> 
+
+ 
+
+  
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+
+                    Confidential                                                         1 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATION 
+CIAL 
+
+ 
+
+                ABBREVATIONS 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+ 
+
+                CHANGE HISTORY 
+
+Versi
+on 
+ 
+
+Description 
+
+Created by 
+
+Date 
+
+ 
+
+ 
+
+ 
+
+Reviewed 
+by 
+ 
+
+Date 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         2 
+
+ 
+ 
+ 
+
+ Table of Contents 
+
+Create Price Master 
+Change Price Master/Approve Price Master in Change mode 
+
+1. 
+2. 
+3.  Display Price Master 
+ 
+ 
+
+4 
+Error! Bookmark not defined. 
+Error! Bookmark not defined. 
+
+                    Confidential                                                         3 
+
+1.  Create Price Master 
+
+ 
+ 
+ 
+
+Overview 
+
+ 
+Trigger:  
+ 
+This procedure will be used to create Price master. 
+ 
+
+Business Process Description Overview 
+
+ 
+
+This transaction will create Price Master record. 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+1.1. 
+ 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+Condition Type 
+
+Four character code 
+
+Output - Results 
+Condition records created 
+
+ 
+
+Comments 
+
+Access the transaction by: 
+
+Procedural Steps 
+
+Via Menus 
+
+Via Transaction Code 
+
+SAP Menu Logistics  Sales And Distribution  Master Data  
+ConditionsSelect using Condition typeCreate 
+ 
+VK11 
+
+                    Confidential                                                         4 
+
+ 
+
+ 
+
+ 
+ 
+
+1.2. 
+
+On screen “Create Condition Records”, enter information in the fields as specified in the table below: 
+
+Field Name 
+Condition 
+Type 
+ 
+
+Description 
+
+Enter the Condition type with 
+which the record is to be created 
+ 
+
+ 
+
+R/O/C 
+
+R 
+
+User Action and Values 
+
+Comments 
+
+For e.g. ZLMN 
+
+ 
+
+(Note: On Above table in column “R/O/C”, “R” = Required, “O” = Optional, “C” = Conditional) 
+ 
+
+FOR CONDITION TYPE ZLMN, 
+
+ 
+
+                    Confidential                                                         5 
+
+ 
+
+ 
+
+ 
+Click on Key Combination icon 
+ 
+Key Combination 4:  
+ 
+Sales Organization/ Distribution Channel/ Division/ Material /Bill Code 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         6 
+
+ 
+
+ 
+ 
+
+ 
+
+ icon. 
+
+Click on Continue 
+ 
+ 
+ 
+Enter the details 
+ 
+Select Processing Status as Blocked (B) 
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+ 
+ 
+
+Click on save 
+ 
+ 
+
+icon. 
+
+ 
+
+                    Confidential                                                         7 
+
+ 
+ 
+When the condition record is created with processing status as “B”, a mail is triggered to SAP Mail box of 
+Price Master Approver. 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         8 
+
+ 
+
+ 
+
+1.3. 
+
+Check inbox of Price Master Approver for mail on request for approving the condition record created. 
+
+In SAP Easy access screen, click on icon for inbox  
+
+ , select Inbox 
+
+ 
+Click on Inbox Unread Documents 
+ 
+
+ 
+ 
+Double click on the received mail 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         9 
+
+ 
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released which is 
+explained later (Approve Price Master in Change Mode) 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         10 
+
+ 
+ 
+ 
+FOR CONDITION TYPE ZLMX 
+ 
+
+ 
+ 
+ 
+Click on Key Combination icon 
+ 
+Key Combination 4:  
+Sales Organization/ Distribution Channel/ Division/ Material / Bill Code 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         11 
+
+ 
+
+Click on Continue 
+ 
+
+ icon. 
+
+ 
+
+ 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+
+                    Confidential                                                         12 
+
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+Click on save 
+
+ icon 
+
+ 
+
+                    Confidential                                                         13 
+
+ 
+ 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+ 
+
+ 
+
+                    Confidential                                                         14 
+
+ 
+ 
+ 
+Double click on the mail received. 
+ 
+ 
+
+ 
+
+                    Confidential                                                         15 
+
+ 
+
+ 
+
+ 
+
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+
+ 
+ 
+
+ 
+FOR CONDITION TYPE ZLNR, 
+
+                    Confidential                                                         16 
+
+ 
+ 
+Click on Key Combination icon 
+ 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         17 
+
+Select the combination and click on Continue 
+ 
+ 
+Key Combination 4:  
+Sales Organization/ Distribution Channel/ Division/ Customer/ Material 
+ 
+
+ icon. 
+
+ 
+Enter the Billing code and press enter   
+
+Now double click the entry or click on Scales Icon 
+scales.  
+ 
+ 
+ 
+ 
+ 
+
+ on top to maintain the price according to the 
+
+                    Confidential                                                         18 
+
+ 
+
+ 
+
+ 
+ 
+Enter the details Select Processing Status as Blocked (B) 
+ 
+ 
+ 
+Click on save 
+ 
+
+icon. 
+
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+                    Confidential                                                         19 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         20 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+
+ 
+ 
+Double click on the mail received. 
+
+ 
+
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+
+ 
+
+                    Confidential                                                         21 
+
+Key Combination 3:  
+ 
+Sales Organization/ Distribution Channel/ Division/ Material / Arrival Flt /Bill Code 
+ 
+ 
+ 
+
+ 
+ 
+
+Click on Continue 
+ 
+
+ icon. 
+
+ 
+
+                    Confidential                                                         22 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+ 
+ 
+Click on save 
+
+icon. 
+
+ 
+
+ 
+
+                    Confidential                                                         23 
+
+ 
+
+                    Confidential                                                         24 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+
+ 
+ 
+Double click on the mail received. 
+ 
+
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+FOR CONDITION TYPE ZPNR, 
+ 
+ 
+ 
+
+                    Confidential                                                         25 
+
+ 
+
+ 
+
+ 
+Click on Key Combination icon 
+ 
+Key Combination 2:  
+Sales Organization/ Distribution Channel/ Division/ Material 
+ 
+ 
+
+ 
+
+                    Confidential                                                         26 
+
+ 
+
+ 
+ 
+ 
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+ 
+
+                    Confidential                                                         27 
+
+ 
+
+Now double click the entry or click on Scales Icon 
+scales.  
+ 
+ 
+ 
+
+ on top to maintain the price according to the 
+
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+
+                    Confidential                                                         28 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+ 
+ 
+Click on save 
+
+icon. 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         29 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+ 
+ 
+
+ 
+ 
+Double click on the mail received. 
+ 
+ 
+
+ 
+
+                    Confidential                                                         30 
+
+ 
+
+ 
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+FOR CONDITION TYPE ZPDR, 
+ 
+ 
+
+                    Confidential                                                         31 
+
+ 
+ 
+Click on Key Combination icon 
+ 
+Key Combination 2:  
+Sales Organization/ Distribution Channel/ Division/ Material 
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+                    Confidential                                                         32 
+
+ 
+
+ 
+ 
+ 
+
+Click on Continue 
+ 
+
+ icon. 
+
+Now double click the entry or click on Scales Icon 
+scales.  
+ 
+ 
+
+ on top to maintain the price according to the 
+
+ 
+
+                    Confidential                                                         33 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+ 
+
+ 
+ 
+ 
+ 
+Click on save 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+ 
+
+                    Confidential                                                         34 
+
+ 
+ 
+ 
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+ 
+FOR CONDITION TYPE ZAB1, 
+ 
+
+Click on Key Combination icon 
+ 
+Key Combination 2:  
+Sales Organization/ Distribution Channel/ Division/ Customer/ Material 
+ 
+
+ 
+
+                    Confidential                                                         35 
+
+ 
+ 
+ 
+
+Click on Continue 
+ 
+ 
+
+ icon. 
+
+ 
+Currency 
+=USD 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+
+ 
+
+                    Confidential                                                         36 
+
+ 
+ 
+ 
+Click on save 
+ 
+
+icon. 
+
+ 
+ 
+
+ 
+
+                    Confidential                                                         37 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+ 
+
+ 
+ 
+ 
+Double click on the mail received. 
+ 
+ 
+
+ 
+
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+
+ 
+
+                    Confidential                                                         38 
+
+ 
+ 
+ 
+ 
+ 
+ 
+FOR CONDITION TYPE ZAB2, 
+
+Click on Key Combination icon 
+Key Combination 2:  
+Sales Organization/ Distribution Channel/ Division/ Material 
+ 
+ 
+
+ 
+
+                    Confidential                                                         39 
+
+ 
+
+ icon. 
+
+Click on Continue 
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+ 
+Click on save 
+
+icon. 
+
+ 
+
+ 
+
+                    Confidential                                                         40 
+
+ 
+
+                    Confidential                                                         41 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+
+ 
+Double click on the mail received. 
+ 
+ 
+
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         42 
+
+ 
+
+ 
+
+ 
+FOR CONDITION TYPE ZXRC, 
+ 
+
+ 
+
+ 
+ 
+Click on Key Combination icon 
+ 
+Key Combination 2:  
+Sales Organization/ Distribution Channel/ Division/  
+Bill Code/Departure Terminal/Material 
+ 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         43 
+
+ 
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+Now double click the entry or click on Scales Icon 
+scales.  
+ 
+ 
+ 
+
+ 
+
+ on top to maintain the price according to the 
+
+Enter the details 
+
+ 
+
+                    Confidential                                                         44 
+
+Select Processing Status as Blocked (B) 
+ 
+
+ 
+ 
+ 
+Click on save 
+ 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         45 
+
+ 
+ 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+ 
+
+ 
+
+                    Confidential                                                         46 
+
+ 
+ 
+Double click on the mail received. 
+
+ 
+
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+
+ 
+
+                    Confidential                                                         47 
+
+ 
+ 
+FOR CONDITION TYPE ZINX, 
+ 
+
+ 
+Click on Key Combination icon 
+ 
+Key Combination 1:  
+Sales Organization/ Distribution Channel/ Division/ Customer/ Material 
+
+ 
+
+                    Confidential                                                         48 
+
+ 
+
+Click on Continue 
+ 
+ 
+
+ icon. 
+
+ 
+
+ 
+
+ 
+
+Now double click the entry or click on Scales Icon 
+scales.  
+ 
+
+ on top to maintain the price according to the 
+
+                    Confidential                                                         49 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         50 
+
+Click on save 
+
+icon. 
+
+ 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+ 
+
+ 
+
+                    Confidential                                                         51 
+
+ 
+Double click on the mail received. 
+ 
+ 
+
+ 
+
+                    Confidential                                                         52 
+
+ 
+
+ 
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+FOR CONDITION TYPE JSER, 
+ 
+
+Click on Key Combination icon 
+ 
+Key Combination:  
+Sales Organization/ Division 
+ 
+
+ 
+
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+                    Confidential                                                         53 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+Click on save 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+icon. 
+
+ 
+
+ 
+
+                    Confidential                                                         54 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         55 
+
+ 
+FOR CONDITION TYPE JECS, 
+ 
+
+ 
+ 
+Click on Key Combination icon 
+Key Combination:  
+Sales Organization/ Division 
+ 
+
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+Enter the details 
+
+ 
+
+                    Confidential                                                         56 
+
+Select Processing Status as Blocked (B) 
+
+ 
+Click on save 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         57 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         58 
+
+FOR CONDITION TYPE JSHE, 
+ 
+ 
+
+ 
+Click on Key Combination icon 
+Key Combination:  
+Sales Organization/Division 
+ 
+
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+Enter the details 
+
+ 
+
+                    Confidential                                                         59 
+
+Select Processing Status as Blocked (B) 
+
+ 
+Click on save 
+ 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         60 
+
+ 
+ 
+FOR CONDITION TYPE JVAT, 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         61 
+
+Click on Key Combination icon 
+Key Combination 1:  
+Sales Organization/ Distribution Channel/ Division/ Customer/Material 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+ 
+
+ 
+
+                    Confidential                                                         62 
+
+ 
+Click on save 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         63 
+
+ 
+
+ 
+
+                    Confidential                                                         64 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+
+ 
+Double click on the mail received. 
+
+ 
+
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         65 
+
+ 
+Key Combination 2:  
+Sales Organization/ Distribution Channel/ Division/ Material 
+ 
+
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+Click on save 
+ 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+                    Confidential                                                         66 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+On saving, mail is triggered to Price Master approvers inbox as shown below. 
+
+ 
+
+ 
+
+                    Confidential                                                         67 
+
+Double click on the mail received. 
+
+ 
+
+ 
+Based on the information shared in the request for approval mail, the Price master approver must go to 
+change mode of Price master and change the Processing status from Blocked to Released. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         68 
+
+ 
+ 
+ 
+FOR CONDITION TYPE YTCS, 
+ 
+
+Click on Key Combination icon 
+
+ 
+
+Click on Continue 
+ 
+
+ icon. 
+
+ 
+
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+
+                    Confidential                                                         69 
+
+Click on save 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         70 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         71 
+
+ 
+FOR CONDITION TYPE YTC1, 
+ 
+
+Click on Key Combination icon 
+ 
+
+ 
+
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+
+                    Confidential                                                         72 
+
+ 
+
+Click on save 
+
+icon. 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+
+                    Confidential                                                         73 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         74 
+
+FOR CONDITION TYPE JTCS, 
+ 
+
+ 
+Click on Key Combination icon, select Key combination 2 i.e. Sales Organization. 
+
+ 
+
+Click on Continue 
+
+ icon. 
+
+ 
+
+ 
+Enter the details 
+Select Processing Status as Blocked (B) 
+
+ 
+
+                    Confidential                                                         75 
+
+icon. 
+
+Click on save 
+ 
+ 
+ 
+
+ Processing 
+Status =”B” 
+(Blocked) 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         76 
+
+Change Price Master 
+
+2. 
+ 
+ 
+
+Overview 
+
+ 
+
+Trigger:  
+ 
+ 
+This procedure will be used to change a price master condition record created. 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+This transaction will change a price master condition record created.  
+ 
+
+Business Process Description Overview 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+Condition type 
+
+Four Character Code ex. ZMIS 
+
+Output – Results 
+Condition record saved 
+
+Condition record will be saved with the changes made.  
+
+Comments 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         77 
+
+Procedural Steps 
+
+ 
+
+ 
+
+2.1. 
+
+Check the inbox of Price Master Approver for any requests 
+
+Go to SAP inbox of Price Master Approver 
+
+ 
+Double click on the mail received 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         78 
+
+2.2. 
+
+Change the values in the respective fields(if needed) and changing the processing status of the Price 
+Master record created from Blocked (B) to Released(C)(for approving the Price Master) 
+
+ 
+Go to change mode of Price Master Record 
+ 
+
+ 
+
+Via Menus 
+
+Via Transaction Code 
+
+SAP Menu Logistics  Sales And Distribution  Master Data  
+ConditionsSelect using Condition typeChange 
+ 
+VK12 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         79 
+
+   
+Click on Key Combinations icon 
+ 
+ 
+
+ 
+
+Click on Continue
+In the screen populated type in the details as given in the mail. 
+Select release status as “Blocked” (A) 
+
+ icon. 
+
+ 
+
+                    Confidential                                                         80 
+
+Select “A” 
+(Blocked) 
+
+ 
+
+Click on execute 
+
+icon. 
+
+ 
+
+ 
+Change the value in whichever fields required (for ex. Amount, Valid from, Valid To etc) 
+
+ 
+
+                    Confidential                                                         81 
+
+Select 
+Processing 
+Status=“C” 
+(Released) 
+
+ 
+ 
+ 
+ 
+ 
+Change the Processing status from B to C. 
+ 
+Click on save 
+
+ icon. 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+                    Confidential                                                         82 
+
+ 
+3.  Display Price Master 
+ 
+ 
+
+Overview 
+
+ 
+
+Trigger:  
+ 
+ 
+This procedure will be used to view price master condition record already created. 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+This transaction will display a price master condition record created.  
+ 
+
+Business Process Description Overview 
+
+Input - Required Fields 
+
+Field Value / Comments 
+
+Condition type 
+
+Four Character Code ex. ZMIS 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                    Confidential                                                         83 
+
+Procedural Steps 
+
+ 
+
+Display the created price master condition record  
+
+3.1. 
+ 
+ 
+Go to display mode of Price Master Record 
+ 
+
+Via Menus 
+
+Via Transaction Code 
+
+SAP Menu Logistics  Sales And Distribution  Master Data  
+ConditionsSelect using Condition typeDisplay 
+ 
+VK13 
+
+ 
+
+ 
+
+                    Confidential                                                         84 
+
+ 
+ 
+Click on Key Combination icon 
+ 
+Key Combination 1:  
+ 
+Sales Organization/ Distribution Channel/ Division/ Material 
+ 
+
+ 
+
+ 
+
+ 
+
+                    Confidential                                                         85 
+
+Click on Continue 
+
+ icon. 
+
+Enter the details 
+ 
+
+Click on Execute 
+
+ icon. 
+
+ 
+
+ 
+
+                    Confidential                                                         86 
+
+Select 
+Processing 
+Status=“C” 
+(Released) 
+
+ 
+ 
+ 
+ 
+ 
+ 
+The condition record created can be viewed. 
+
+ 
+
+                    Confidential                                                         87 
+
+

@@ -1,0 +1,779 @@
+ 
+SAP IMPLEMENTATION  
+ 
+TECHNICAL SPECIFICATION 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+CIAL_SAP_MM_TS_04_PRICE COMPARISON 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT NAME 
+CIAL_SAP_MM_FS_04_Price Comparison 
+
+ 
+
+ 
+ 
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DOCUMENT 
+
+FS 
+
+ 
+
+ 
+ 
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+Chithra Catherine 
+Pattara 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+REMARKS 
+
+22/01/14 
+
+1.0 
+
+ 
+
+ 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+DISTRIBUTION 
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+CIAL 
+
+TCS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+                                                     Page 2 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+REVIEW  
+ 
+
+COMPANY 
+
+TCS 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                     Page 3 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 5 
+
+2.  SCOPE .......................................................................................................................... 5 
+
+2.1 
+
+2.2 
+
+Assumptions ......................................................................................................... 5 
+
+Exclusions ............................................................................................................ 5 
+
+3.  DEVELOPMENT TECHNICAL DESCRIPTION ............................................................ 5 
+
+3.1 
+
+3.2 
+
+Program Header ..................................................................................................... 5 
+
+Summary .............................................................................................................. 6 
+
+3.3 
+
+Input ................................................................................................................... 6 
+3.3.1  Selection Parameters ........................................................................................................................ 6 
+3.3.2  Data Source ...................................................................................................................................... 6 
+Interfaces ........................................................................................................................................... 6 
+3.3.3 
+
+Process Map .......................................................................................................... 6 
+
+Processing Logic .................................................................................................... 6 
+
+Output ................................................................................................................. 9 
+
+Technical Constraints .............................................................................................. 9 
+
+Performance, Volume and Frequency ......................................................................... 9 
+
+Authorization Considerations .................................................................................... 9 
+
+3.4 
+
+3.5 
+
+3.6 
+
+3.7 
+
+3.8 
+
+3.9 
+
+ 
+
+ 
+
+                                                     Page 4 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+1. OBJECTIVE 
+ 
+The objective of this enhancement is to do price comparison of quotations based on 
+estimated price (Price in PR)  
+
+ 
+2.  SCOPE  
+ 
+
+The scope of this enhancement is to do price comparison of quotations based on 
+estimated price (PR price).This will be applicable to all RFQ document types. 
+ 
+
+2.1  Assumptions 
+
+ 
+
+NA 
+
+2.2  Exclusions 
+
+ 
+
+              NA 
+ 
+3. DEVELOPMENT TECHNICAL DESCRIPTION 
+ 
+
+3.1  Program Header 
+
+Title 
+
+Price Comparison     
+
+Date raised 
+
+22/01/14 
+
+Requesting Person 
+ 
+Complexity 
+ 
+ 
+Package 
+ 
+Program Tool  
+ 
+SAP Std modify 
+ 
+Oss note 
+ 
+New Program 
+ 
+
+ 
+Copy from existing 
+
+Chithra 
+
+High 
+
+ZPM00 
+
+Abap 
+
+ 
+
+NA 
+
+ 
+
+ 
+
+Expected date 
+ 
+Dev. object scope 
+ 
+SAP Module 
+ 
+SAP program name 
+ 
+Message Class 
+  
+Modification 
+ 
+
+Transport Request 
+No 
+
+NA 
+
+ 
+  
+Existing Name 
+program                   
+Forms 
+ 
+Logo  
+ 
+Type of Program 
+ 
+(the section below will be completed by the Techincal Team) 
+ 
+New Name 
+
+ 
+Existing T. code 
+
+ Pre-printed       
+
+ Foreground      
+
+ Regular paper 
+
+ To be added 
+
+ Background 
+
+Transaction code 
+
+NA 
+
+ 
+
+Report 
+
+MM 
+
+ZRM06EPS0 
+
+NA 
+
+ 
+
+ 
+
+NA 
+
+ZME49 
+
+ 
+
+                                                     Page 5 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+ 
+
+3.2  Summary 
+ 
+
+This program creates a provision for comparison of the quoted price with estimated 
+price(PR price).In the price comparison report, estimated price and deviation of the 
+quoted price from estimated price will be displayed . 
+
+3.3 
+
+Input 
+
+3.3.1  Selection Parameters 
+
+NA 
+
+ 
+
+ 
+
+3.3.2  Data Source 
+
+NA 
+
+3.3.3  Interfaces 
+
+                  NA 
+
+3.4  Process Map       
+                  
+
+ 
+
+Figure 1: Process Flow 
+
+3.5  Processing Logic 
+This section contains a technical description of the process map.  
+
+Copy the program for ME49 into Custom Program ZRM06EPS0 and create a tcode ZME49 
+
+Make the changes to the below includes and subroutines 
+
+.Create a new include ZFM06ICP1 by copying FM06ICP1 to add a checkbox for Estimation 
+and add below parameter 
+
+     ( Data type ZMM_PRESTIMATION type ZFELD) 
+
+     PARAMETER:p_pr AS CHECKBOX TYPE zmm_prestimation. 
+
+Create a new include ZSAPFM06I  by copying SAPFM06I  
+
+Replace SAPFM06I with ZSAPFM06I in program ZRM06EPS0. 
+
+Replace existing includes by copying them into Z includes for updating top of page and 
+other output texts 
+
+.Change the code in PERFORM rang_errechnen  in FM06IFPS_BELEGE_AUFBEREITEN by 
+creating ZFM06IFPS_RANG_ERRECHNEN 
+
+Select ebeln ebelp banfn bnfpo from EKET for all entries in XEKPO where ebeln = xekpo-
+ebeln and ebelp = xekpo-ebelp. 
+
+If an entry found,select banfn bnfpo menge preis peinh packno from EBAN for entries in 
+EKET where  banfn = eket-banfn  and loekz = space. 
+
+ 
+
+                                                     Page 6 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+If an entry found in EBAN ,select packno introw extrow sub_packno from ESLL into 
+ESLL_TEMP  for entries in EBAN where packno = eban-packno. 
+
+If an entry found,select records from ESLL into ESLL for entries in ESLL_TEMP  WHERE 
+packno = esll_temp-sub_packno . 
+
+Incorporate the code to update values under 'LOOP AT xekpo WHERE zwert NE 0.' 
+
+            IF p_pr NE space,read table EKET using EBELN = XEKPO-EBELN EBELP = XEKPO-
+EBELP.                  
+
+              Read tabel EBAN using BANFN = EKET-BANFN BNFPO = EKET-BNFPO. 
+
+             If EBAN-PREIS is not initial, refe1  = ( ( gwa_eban-preis * gwa_eban-menge ) / 
+1000 ) * 100 / lv_value. 
+
+ Change the code in PERFORM LEISTUNGEN_AUFBEREITEN  in 
+FM06IFPS_BELEGE_AUFBEREITEN by creating ZFM06IFPS_LEISTUNGENAUFBEREITE 
+
+IF p_pr NE space,read table EKET using EBELN = XEKPO-EBELN EBELP = XEKPO-EBELP.                  
+
+              Read table EBAN using BANFN = EKET-BANFN BNFPO = EKET-BNFPO and 
+populate 
+
+                    lwert-prestimate  = ( ( gwa_eban-preis * gwa_eban-menge ) / 1000 ) * 100 / 
+lv_value.            
+
+Code addition in ZFM06IFPS_LV_AUSGEBEN  
+
+         IF p_pr NE space, raed table esll WITH KEY packno = srvtab-pln_packno and                                                  
+introw = srvtab-pln_introw and populate   srvtab-percent = srvtab-netwr * 100 / 
+gwa_esll-netwr . 
+
+Add new perform  PERFORM srv_estimate USING colortyp srvtab-block. 
+
+Create ZSAPFM06I_PR_SPALTEF01 and create Subroutine PR_SPALTE and SRV_ESTIMATE 
+fro displaying Estimation details 
+
+Subroutine PR_SPALTE - code to add a new colum and display estimation details 
+
+    If p_pr NE space, read table EKET uisng ebeln = xekpo-ebeln ebelp = xekpo-ebelp.  
+
+     Read table EBAN using banfn = eket-banfn bnfpo = eket-bnfpo. 
+
+      position = ( aktind + 1 - firstind ). 
+
+      IF p_mittel NE space , position = position + 1. 
+
+      IF p_mini NE space ,  position = position + 1. 
+
+      Else,     position = position * 18 + 38. 
+
+      POSITION position. 
+
+      IF  eban-preis NE 0, lv_value = ( gwa_eban-preis * gwa_eban-menge ) / 1000  and   
+gv_totvalue = gv_totvalue + (( gwa_eban-preis * gwa_eban-menge ) / 1000 ).        
+
+          WRITE: (17) lv_value CURRENCY waehrung        NO-GAP COLOR COL_NORMAL 
+INTENSIFIED. 
+
+ 
+
+ 
+
+                                                     Page 7 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+Subroutine  SRV_ESTIMATE - PERFORM srv_estimate USING colortyp srvtab-block in 
+ZFM06IFPS_LV_AUSGEBEN  
+
+            READ TABLE esll WITH KEY packno = srvtab-pln_packno 
+
+                                            introw = srvtab-pln_introw. 
+
+ 
+
+    IF gwa_esll-netwr NE 0,  gv_sertotal = gv_sertotal + esll-netwr, WRITE: (17) esll-netwr 
+CURRENCY waehrung NO-GAP.        
+
+      IF p_anfbas EQ space OR lwert-refwrt EQ 0. 
+
+        CASE p_prozb. 
+
+            IF p_pr NE space,  lv_value = gwa_esll-netwr  and      lv_value = lv_value * 100. 
+
+              IF gwa_esll-netwr IS NOT INITIAL,  refe1       = lv_value * 100 / gwa_esll-netwr . 
+
+For Buy back Price ranking,copy FM06IFPS_SUMMEN_ZEILEAUSGEBEN to 
+ZFM06IFPS_SUMMEN_ZEILEAUSGEBEN  
+
+  IF xekko1[] IS INITIAL. 
+
+    LOOP AT xekko. 
+
+      LOOP AT xekpo WHERE ebeln = xekko-ebeln and populate  lv_zwert    = lv_zwert + 
+xekpo-zwert. 
+
+       READ TABLE konv WITH KEY knumv = xekko-knumv and populate   lv_zwert = 
+lv_zwert - konv-kbetr . 
+
+        xekko1 = xekko. 
+
+      xekko1-buy = lv_zwert. 
+
+      APPEND xekko1. 
+
+    ENDLOOP. 
+
+ 
+
+    SORT xekko1 BY buy. 
+
+    LOOP AT xekko1. 
+
+      lv_rank = lv_rank + 1. 
+
+      IF xekko1-buy NE lwa_xekko-buy, xekko1-rank = lv_rank."sy-tabix. 
+
+      Else,  xekko1-rank = lwa_xekko-rank. 
+
+      MODIFY xekko1 TRANSPORTING rank. 
+
+      lwa_xekko = xekko1. 
+
+    ENDLOOP. 
+
+To reduce Buy Back Price -Condition Type 'ZBUY',Copy FM06IFPS_LISTE_ANZEIGEN_PS to 
+ZFM06IFPS_LISTE_ANZEIGEN_PS 
+
+  SELECT knumv kposn kschl kbetr kwert  FROM konv  FOR ALL ENTRIES IN xekko 
+
+ 
+
+                                                     Page 8 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+   WHERE knumv = xekko-knumv AND kschl = 'ZBUY' and  DELETE konv WHERE kbetr EQ 
+space.   
+ 
+
+ 
+
+ 
+
+3.6  Output 
+
+ 
+
+3.7  Technical Constraints 
+              NA 
+
+ 
+
+3.8  Performance, Volume and Frequency 
+ 
+
+3.9  Authorization Considerations 
+             NA 
+
+ 
+
+4.Unit Test Case scenarios 
+
+    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                     Page 9 of 10                                                         TCS–CIAL Confidential 
+
+ 
+ 
+
+Appendix 
+
+ 
+    NA 
+ 
+ 
+ 
+ 
+
+Naming Conventions 
+
+ 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Technical specification, <Module Name> should 
+be FI. 
+
+ 
+
+FI = Finance 
+
+  MM = Procurement 
+
+  RE = Real Estate 
+
+ 
+
+SD = Sales & Distribution 
+
+  HR = Human Resource 
+
+  PM = Plant Maintenance 
+
+  PS = Project System 
+
+  DMS = Document Management System 
+
+ 
+
+SRM = Suppliers’ relationship management 
+
+DT- Document Type indicator, in this case it is TS (Technical Specification). 
+
+ 
+ 
+
+ 
+
+                                                     Page 10 of 10                                                         TCS–CIAL Confidential 
+
+

@@ -1,0 +1,687 @@
+ 
+SAP IMPLEMENTATION  
+ 
+FUNCTIONAL SPECIFICATION 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ FS_DTS008-DISPATCH REQUEST PRINTOUT 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                                                                                                                                       PREPARED BY  
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ABBREVATIONS 
+ 
+
+ABBREVATION 
+
+CIAL 
+
+ 
+
+ 
+ 
+ 
+DOCUMENT REFERENCES 
+ 
+
+DESCRIPTION 
+
+Cochin International Airport Ltd. 
+
+ 
+
+DOCUMENT 
+
+DOCUMENT NAME 
+
+ 
+
+ 
+
+ 
+CHANGE HISTORY 
+ 
+
+AUTHOR 
+
+ 
+
+ 
+
+CREATION 
+DATE 
+
+VERSION 
+
+STATUS 
+
+CHANGES 
+
+Abijith Chandra P 
+
+29-10-2014  1 
+
+Released 
+
+AMENDED BY 
+
+DATE 
+
+VERSION 
+
+STATUS 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+DISTRIBUTION 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+ROLE 
+
+ACTION 
+
+INFO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+X 
+
+X 
+
+ 
+
+ 
+
+CIAL 
+
+TCS 
+
+ 
+ 
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 2 of 12                                                                                     TCS – CIAL Confidential 
+
+NAME 
+
+DATE 
+
+SIGNATURE 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REVIEW  
+ 
+
+COMPANY 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+SIGNOFF 
+ 
+
+ 
+
+COMPANY 
+
+NAME 
+
+DESIGNATION 
+
+SIGNATURE 
+
+CIAL 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 3 of 12                                                                                     TCS – CIAL Confidential 
+
+TABLE OF CONTENTS 
+
+1.  OBJECTIVE .................................................................................................................. 5 
+
+2.  SCOPE .......................................................................................................................... 6 
+
+2.1 
+
+2.2 
+
+Assumptions ......................................................................................................... 6 
+
+Exclusions ............................................................................................................ 6 
+
+3.  DEVELOPMENT DETAILS ........................................................................................... 6 
+
+3.1 
+
+Program Details ..................................................................................................... 6 
+
+4.  REPORTS ..................................................................................................................... 7 
+
+4.1 
+
+Input ................................................................................................................... 7 
+4.1.1  Selection Parameters ........................................................................................................................ 7 
+
+4.2 
+
+Processing Logic Overview ....................................................................................... 7 
+
+4.3 
+
+Output ................................................................................................................. 7 
+4.3.1  Report Output Fields ......................................................................................................................... 7 
+4.3.2  Report Layout .................................................................................................................................... 7 
+
+4.4 
+
+Constraints ........................................................................................................... 8 
+
+ 
+
+5.  ADDITIONAL INFORMATION ...................................................................................... 9 
+
+5.1 
+
+5.2 
+
+5.3 
+
+5.4 
+
+Volume and Frequency ............................................................................................ 9 
+
+Authorizations ....................................................................................................... 9 
+
+Error Handling Specifications .................................................................................... 9 
+
+Additional Security Considerations ............................................................................. 9 
+
+6.  UNIT TEST CASE SCENARIOS................................................................................. 10 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 4 of 12                                                                                     TCS – CIAL Confidential 
+
+1. OBJECTIVE 
+
+ 
+Print out for dispatch requests. 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 5 of 12                                                                                     TCS – CIAL Confidential 
+
+2.  SCOPE  
+ 
+This  chapter  discusses  the  scope  of  development,  scope  exclusions  if  any  and 
+assumptions made by TCS with respect to implementation. 
+ 
+
+2.1  Assumptions 
+ 
+NA 
+
+ 
+
+2.2  Exclusions 
+ 
+NA 
+ 
+3. DEVELOPMENT DETAILS 
+ 
+
+3.1  Program Details 
+
+Dispatch request printout 
+
+FS Description 
+
+Object Owner 
+
+Complexity 
+
+SAP Module 
+
+SAP Std modified 
+
+New Program 
+
+ 
+
+Medium 
+
+DTS 
+
+ 
+
+ 
+
+Sap Existing Name 
+
+ 
+
+Date raised 
+
+29/10/2014 
+
+Expected date 
+
+ 
+
+Dev. object type 
+
+Smartform 
+
+Oss note 
+
+ 
+
+ 
+Copy from 
+existing program         
+Existing T. code 
+
+ 
+
+Type of Program 
+
+ Foreground 
+
+ Background 
+
+(The section below will be completed by the Technical team) 
+
+New Name 
+
+ 
+
+Transaction code 
+
+ 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 6 of 12                                                                                     TCS – CIAL Confidential 
+
+4. REPORTS 
+
+ 
+
+4.1 
+
+Input  
+
+4.1.1  Selection Parameters 
+
+ 
+
+ 
+ 
+
+4.2  Processing Logic Overview 
+ 
+A smartform should be created for taking the printouts of the DTS requests. 
+ 
+
+4.3  Output 
+
+4.3.1  Report Output Fields 
+
+ 
+
+ 
+ 
+
+ 
+
+4.3.2  Report Layout 
+
+Report Layout 
+
+(this should be an 
+
+inserted file as an ICON  
+that contains the output 
+display of the program – 
+e.g. excel sheet format) 
+
+ 
+
+Table 1: Report Layout 
+
+Output format (Form Layout) as mentioned below.   
+
+Table 2: Report Details 
+
+Type of Printer (Reports) 
+
+  Dot Matrix 
+  Laser /Desk Jet/Zebra 
+
+Type of Paper Printout  (Reports) 
+
+Printing Requirements 
+
+(mandatory for programs 
+that produces a hard copy) 
+
+  Pre-printed form 
+  Regular Paper (as designed in the layout) 
+
+Paper Design (only for Reports) 
+
+Size of Paper  A4 
+
+Orientation  
+
+  Portrait 
+  Landscape 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 7 of 12                                                                                     TCS – CIAL Confidential 
+
+Logo  
+
+  To be added 
+
+ 
+
+Report Layout 
+
+(this should be an inserted 
+
+file as an ICON  that 
+
+contains the output display 
+of the program – e.g. excel 
+
+sheet format) 
+
+ 
+
+ 
+
+ 
+
+4.4  Constraints 
+
+       NA
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 8 of 12                                                                                     TCS – CIAL Confidential 
+
+  
+
+5. ADDITIONAL INFORMATION 
+ 
+
+5.1  Volume and Frequency 
+
+As  and  when  customer  enter  measurement  value  for  a  non  counter  measuring  point  system  check  the 
+normal value  ranges given in the corresponding measuring point master and if the values are outside the 
+range notification gets created in the background.  
+
+ 
+
+5.2  Authorizations 
+
+<Outline  authorization  requirements  e.g.  mention  the  authorization  objects  to  be  checked  during 
+program processing. Due to this requirement the modification / creation of authorization roles might me 
+necessary. Capture such information here, when required. 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+ 
+
+5.3  Error Handling Specifications 
+
+What are the business specifications/needs to handle the errors? 
+
+ 
+
+5.4  Additional Security Considerations 
+
+List any security considerations that are different than that specified in Section 1.4 or are not covered in 
+Section 1.4. 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 9 of 12                                                                                     TCS – CIAL Confidential 
+
+6. UNIT TEST CASE SCENARIOS  
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+Case Scenario 
+
+Description 
+
+Table 3: Test Case Scenarios 
+
+ 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 10 of 12                                                                                     TCS – CIAL Confidential 
+
+A  Appendix 
+
+ 
+
+<Include appendices when: 
+
+•  The volume of information would detract from the document format or be confusing. 
+
+• 
+
+• 
+
+Large table entries are involved. 
+
+Supporting information is relevant. 
+
+Ensure there is a 2-way reference between the appendix and the appropriate place in the document. 
+
+Include a glossary of any terms that may be unfamiliar to the audience of the document. 
+
+Note: Once the relevant text is added delete this guideline text marked in blue> 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 11 of 12                                                                                     TCS – CIAL Confidential 
+
+B Naming Conventions 
+
+ 
+
+Document Naming Convention: CIAL_DT_<Module Name>_<Description>.doc 
+
+ 
+
+Module Name – Functional Work stream. Example, For FICO Functional specification, <Module Name> 
+should be FI. 
+
+• 
+
+FI = Finance 
+
+•  MM = Procurement 
+
+•  PP = Manufacturing 
+
+• 
+
+SD = Sales & Distribution 
+
+•  HR = Human Resource 
+
+•  PM = Maintenance 
+
+•  PS = Project System 
+
+•  WM = Warehouse Management 
+
+•  DMS = Document Management System 
+
+• 
+
+EHS = Environment Health & Safety 
+
+DT- Document Type indicator, in this case it is FS (Functional Specification). 
+
+ 
+
+ 
+
+ 
+
+CIAL_SAP_DTS_FS_08_Dispatch Request Printout 
+
+Page 12 of 12                                                                                     TCS – CIAL Confidential 
+
+
