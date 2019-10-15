@@ -1,8 +1,11 @@
 $(function(){
         var globalFuncs={};
         var graphsJSON={};
+        var requestHeader = (window.location.origin).substr(0,(window.location.origin).indexOf("/")+2);
         var host = window.location.host;
+        
         var currentPath = window.location.pathname ;
+        console.log('#############Running in app engine')
         var userData={};
         userData.conn={};
         userData.mergedConn={};
@@ -68,6 +71,8 @@ $(function(){
                     var email={}
                     email.sub = ($("#msg_sub")[0]).value;
                     email.msg = ($("#msg_txt")[0]).value;
+                    email.cc = ($("#msg_cc")[0]).value ||"";
+
                     email.mailid =($("#msg_mail")[0]).value;
                     email.cat = ($("#category span.Select-value-label")[0]).innerHTML
 
@@ -75,10 +80,10 @@ $(function(){
                     if (email.emailExp.test(email.mailid)){
                         var xhttp = new XMLHttpRequest();
                         console.log('########################################before hittiing register ')
-                        xhttp.open("POST", "http://"+host+"/sendquery/", false);
+                        xhttp.open("POST", requestHeader+host+"/sendquery/", false);
 
                         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-                        xhttp.send(JSON.stringify({"sub" : email.sub,"msg":email.msg,"email" : email.mailid,"category" : email.cat}));
+                        xhttp.send(JSON.stringify({"sub" : email.sub,"msg":email.msg,"email" : email.mailid,"category" : email.cat,"cc":email.cc}));
                         console.log(xhttp.responseText);
                         if(!(JSON.parse(xhttp.responseText).failure)){
                             userAlert("Email sent successfully !","Success");
@@ -104,7 +109,16 @@ $(function(){
                 loginUser();
                 //userData =JSON.parse(getCookie("userdata"));
                 userData = JSON.parse(localStorage.getItem('userdata'));
-                userData.tabData = reformatJSON(userData.tabData);
+                if(userData.tabData.if_local){
+                    userData.tabData = (userData.tabData);
+
+                    setTimeout(function(){userAlert("Server Unavailable , using cached data","failure");},2000);
+                }
+                else{
+                    userData.tabData = reformatJSON(userData.tabData);
+                    setTimeout(function(){userAlert("Server Connected","success");},2000);
+
+                }
                 console.log('userData is')
                 console.log(userData)
                 userData.uid =(getCookie("userId"));
@@ -135,7 +149,7 @@ $(function(){
                 var cpwd =  $("#cpwd")[0].value;
                 if(pwd===cpwd){
                     var xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", "http://"+host+"/forgotPwdReset/", false);//getHanaData
+                    xhttp.open("POST", requestHeader+host+"/forgotPwdReset/", false);//getHanaData
                     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                     xhttp.send(JSON.stringify({"uid":uid,"pwd":pwd}));
                     console.log(xhttp.responseText);
@@ -149,7 +163,7 @@ $(function(){
 
 
             });
-            },1000);
+            },3000);
 
 
         }
@@ -184,7 +198,7 @@ $(function(){
                                     break;
                                 }
                                 var xhttp = new XMLHttpRequest();
-                                xhttp.open("POST", "http://"+host+"/checkAcc/", false);
+                                xhttp.open("POST", requestHeader+host+"/checkAcc/", false);
                                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                                 xhttp.send(JSON.stringify({"val":accName}));
                                 console.log(xhttp.responseText);
@@ -218,7 +232,7 @@ $(function(){
 ///////////////////////comment ended by Anji on 23.08.19
 
                                 var xhttp = new XMLHttpRequest();
-                                xhttp.open("POST", "http://"+host+"/getHanaData/", false);//getHanaData
+                                xhttp.open("POST", requestHeader+host+"/getHanaData/", false);//getHanaData
                                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                                 xhttp.send(JSON.stringify({"url":apiUrl,"uname":uname,"pwd":pwd,"apiUrlTables":apiUrlTables}));
                                 console.log(xhttp.responseText);
@@ -305,7 +319,7 @@ $(function(){
                                     //var domain = $(".accountModalInner3 .domain-selector")[0].value;
                                     //checkEmails
                                  var xhttp = new XMLHttpRequest();
-                                xhttp.open("POST", "http://"+host+"/checkEmails/", false);
+                                xhttp.open("POST", requestHeader+host+"/checkEmails/", false);
                                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                                 xhttp.send(JSON.stringify({"user":email}));
                                 console.log(accObj);
@@ -357,7 +371,7 @@ $(function(){
                                 break;
                             case  'part5':
                                 var xhttp = new XMLHttpRequest();
-                                xhttp.open("POST", "http://"+host+"/addAccDet/", false);
+                                xhttp.open("POST", requestHeader+host+"/addAccDet/", false);
                                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                                 xhttp.send(JSON.stringify({"payload":accObj}));
                                 console.log(accObj);
@@ -415,7 +429,7 @@ $(function(){
 
                 var date = new Date();
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "http://"+host+"/fetch_regtab/", false);
+                xhttp.open("POST", requestHeader+host+"/fetch_regtab/", false);
                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                 xhttp.send(JSON.stringify({"timestamp" : date.getTime(),"user":userCookie}));
                 console.log(xhttp.responseText);
@@ -524,8 +538,8 @@ $(function(){
                 var remarks = (($(ev.target).parents("tr")).find(".remarks")[0]).value;
 
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "http://"+host+"/delData/", false);
-                //console.log("http://"+host+"/delData/"+admin+"/"+userName+"/"+action+"/"+remarks+"/");
+                xhttp.open("POST", requestHeader+host+"/delData/", false);
+                //console.log(requestHeader+host+"/delData/"+admin+"/"+userName+"/"+action+"/"+remarks+"/");
             //  debugger;
                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                 xhttp.send(JSON.stringify({"admin":admin,"username":userName,"action":action,"remarks":remarks}));
@@ -538,8 +552,8 @@ $(function(){
                 var remarks = (($(ev.target).parents("tr")).find(".remarks")[0]).value;
 
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "http://"+host+"/addData/", false);
-                //console.log("http://"+host+"/addData/"+admin+"/"+userName+"/"+domain+"/"+remarks+"/");
+                xhttp.open("POST", requestHeader+host+"/addData/", false);
+                //console.log(requestHeader+host+"/addData/"+admin+"/"+userName+"/"+domain+"/"+remarks+"/");
                 //debugger;
                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                 xhttp.send(JSON.stringify({"admin":admin,"username":userName,"domain":domain,"remarks":remarks}));
@@ -572,8 +586,8 @@ $(function(){
                 var userName =(ev.target.classList)[3];
                 var remarks = (($(ev.target).parents("tr")).find(".remarks")[0]).value;
                 var xhttps = new XMLHttpRequest();
-                xhttps.open("POST", "http://"+host+"/delData/", false);
-                //console.log("http://"+host+"/delData/"+admin+"/"+userName+"/"+action+"/"+remarks+"/");
+                xhttps.open("POST", requestHeader+host+"/delData/", false);
+                //console.log(requestHeader+host+"/delData/"+admin+"/"+userName+"/"+action+"/"+remarks+"/");
             //  debugger;
                 xhttps.setRequestHeader("Access-Control-Allow-Origin", "*");
                 xhttps.send(JSON.stringify({"admin":admin,"username":userName,"action":action,"remarks":remarks}));
@@ -611,7 +625,7 @@ $(function(){
                          var xhttp =new XMLHttpRequest();
 
                             console.log('########################################before hittiing register ')
-                            xhttp.open("POST", "http://"+host+"/test/", false,"system","Python@1234567890");
+                            xhttp.open("POST", requestHeader+host+"/test/", false,"system","Python@1234567890");
                             xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 
                             xhttp.send();
@@ -672,7 +686,7 @@ $(function(){
                         if(setpwd==csetpwd){
                             var xhttp = new XMLHttpRequest();
                             console.log('########################################before hittiing register ')
-                            xhttp.open("POST", "http://"+host+"/forgotPwdReset/", false);
+                            xhttp.open("POST", requestHeader+host+"/forgotPwdReset/", false);
 
                             xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                             xhttp.send(JSON.stringify({"pwd" :setpwd}));
@@ -698,7 +712,7 @@ $(function(){
                        var email = ($("#veremail")[0]).value;
                         var xhttp = new XMLHttpRequest();
                         console.log('########################################before hittiing register ')
-                        xhttp.open("POST", "http://"+host+"/forgotPwdMail/", false);
+                        xhttp.open("POST", requestHeader+host+"/forgotPwdMail/", false);
 
                         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         xhttp.send(JSON.stringify({"email" :email}));
@@ -753,7 +767,7 @@ $(function(){
                         var otp = ($("#otp")[0]).value;
                         var xhttp = new XMLHttpRequest();
                         console.log('########################################before hittiing register ')
-                        xhttp.open("POST", "http://"+host+"/forgotPwdOtp/", false);
+                        xhttp.open("POST", requestHeader+host+"/forgotPwdOtp/", false);
 
                         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         xhttp.send(JSON.stringify({"email" :email,"otp":otp}));
@@ -790,7 +804,7 @@ $(function(){
                             {
                                 /*  Anjali on 16/07/19
                                 var xhttp = new XMLHttpRequest();
-                                xhttp.open("GET", "http://"+host+"/register/"+payload.id+"/"+payload.email+"/"+payload.pwd+"/", false);
+                                xhttp.open("GET", requestHeader+host+"/register/"+payload.id+"/"+payload.email+"/"+payload.pwd+"/", false);
                                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                                 console.log('########################################in register ')
                                 xhttp.send();
@@ -798,7 +812,7 @@ $(function(){
                                 */
                                 var xhttp = new XMLHttpRequest();
                                 console.log('########################################before hittiing register ')
-                                xhttp.open("POST", "http://"+host+"/register/", false);
+                                xhttp.open("POST", requestHeader+host+"/register/", false);
 
                                 xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                                 xhttp.send(JSON.stringify({"id" : payload.id,"pwd":payload.pwd,"email" : payload.email}));
@@ -836,7 +850,7 @@ $(function(){
                         var uid = document.getElementById("userid").value;
                         var pwd = document.getElementById("pwd").value;
                         //setTimeout(function(){show(["loading"]);hide(["particles-js","login_container"]);},0);
-                        xhttp.open("POST", "http://"+host+"/login_get_data/", false);
+                        xhttp.open("POST", requestHeader+host+"/login_get_data/", false);
                         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         //xhttp.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -912,7 +926,7 @@ $(function(){
 
 
 
-                        xhttp.open("POST","http://"+host+"/submitForm/", false);
+                        xhttp.open("POST",requestHeader+host+"/submitForm/", false);
                         //xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         console.log('$$$$$$$$$$$$$$$$payload')
@@ -976,7 +990,7 @@ $(function(){
         function getDomainTableData(domain,accName){
             var xhttp = new XMLHttpRequest();
 
-            xhttp.open("POST", "http://"+host+"/getDomainData/", false);
+            xhttp.open("POST", requestHeader+host+"/getDomainData/", false);
                         //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         //xhttp.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -990,7 +1004,7 @@ $(function(){
             //var tabDet = (userData.domainTabs).split("-");
             console.log('usertables are')
             console.log(userData.domainTabs.split("-"));
-            xhttp.open("POST", "http://"+host+"/getTabData/", false);
+            xhttp.open("POST", requestHeader+host+"/getTabData/", false);
                         //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         //xhttp.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -1114,7 +1128,7 @@ $(function(){
 
     function checkType(connProps,newProps){
         var isMatch = false;
-            var dtype = (userData.tabData[newProps.table+"type"]).DATA_TYPE_NAME;
+            var dtype =userData.tabData.if_local? (userData.tabData[newProps.table+"type"]).type:(userData.tabData[newProps.table+"type"]).DATA_TYPE_NAME;
             console.log(dtype);
             var columns =Object.keys((userData.tabData[newProps.table]));
             if (dtype[columns.indexOf(connProps.x)] != "TEXT"){
@@ -1361,8 +1375,8 @@ $(function(){
  }*/
  function validateGraphType(table,x,y,gtype){
      debugger;
-    var xtype =(((userData.tabData[table+"type"])).DATA_TYPE_NAME)[search("COLUMN_NAME",x,(userData.tabData[table+"type"]))];
-    var ytype =(((userData.tabData[table+"type"])).DATA_TYPE_NAME)[search("COLUMN_NAME",y,(userData.tabData[table+"type"]))];
+    var xtype =userData.tabData.if_local? (((userData.tabData[table+"type"])).type)[search("COLUMN_NAME",x,(userData.tabData[table+"type"]))]: (((userData.tabData[table+"type"])).DATA_TYPE_NAME)[search("COLUMN_NAME",x,(userData.tabData[table+"type"]))];
+    var ytype =userData.tabData.if_local?(((userData.tabData[table+"type"])).type)[search("COLUMN_NAME",y,(userData.tabData[table+"type"]))]:(((userData.tabData[table+"type"])).DATA_TYPE_NAME)[search("COLUMN_NAME",y,(userData.tabData[table+"type"]))];
 
     var constraint =(graphsJSON[gtype]).constraint || "";
     var isValid = false;
@@ -1597,10 +1611,21 @@ function search(nameKey,value, myArray){
            return tempObj;
         //}
     }
-        function reformatJSON(JSONobj){
+        function reformatJSON(JSONobj,mergeData){
         var tempObj={}
         var tables = Object.keys(JSONobj);
-        for(var i =1;i<(tables.length)-3;i++){
+        if(mergeData){
+            var records= (Object.keys(JSONobj)).length;
+            for(var k=0;k<records.length;k++){
+               tempObj[tables[i]][records[k]]=[];
+               for(var j=0;j<getSize(JSONobj[tables[i]]);j++){
+                   tempObj[tables[i]][records[k]].push(((JSONobj[tables[i]])[j])[records[k]]);
+               }
+           }
+
+        }
+        else{
+            for(var i =1;i<(tables.length)-3;i++){
             tempObj[tables[i]]={};
             var columns = Object.keys((JSONobj[tables[i]])[0]);
             for(var k=0;k<columns.length;k++){
@@ -1609,6 +1634,8 @@ function search(nameKey,value, myArray){
                    tempObj[tables[i]][columns[k]].push(((JSONobj[tables[i]])[j])[columns[k]]);
                }
            }
+        }
+
         }
         return tempObj;
     }
@@ -1770,7 +1797,7 @@ function search(nameKey,value, myArray){
                     //console.log(userData.currentMergeSelection)
                     var tables = ((Object.keys(userData.currentMergeSelection)).join("-"));
                     var cols = (Object.values(userData.currentMergeSelection)).join("-");
-                    var url = "http://"+host+"/getMergeData/";
+                    var url = requestHeader+host+"/getMergeData/";
                     console.log(url);
                                         //      START OF DATATYPES FOR MERGED TABLE (anjali)
                     if(tables.length<2 || cols.length<2){
@@ -1799,7 +1826,7 @@ function search(nameKey,value, myArray){
                             xhttp.onreadystatechange = function() { // Call a function when the state changes.
                                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                                 // Request finished. Do processing here.
-                                userData.tabData[((userData.connectionToMerge)[0]).table]=reformatJSON(JSON.parse(this.response));
+                                userData.tabData[((userData.connectionToMerge)[0]).table]=reformatJSON(JSON.parse(this.response),true);
                                     console.log(this.response);
                                     generateTable(userData,userData.connectionToMerge[0]);
                                     //debugger;
@@ -1836,8 +1863,8 @@ function search(nameKey,value, myArray){
     }
     function checkMergeCompatibility (tables,cols){
         for(i=0;i<tables.length-1;i++){
-            var type =  Object.values(((userData.tabData[tables[i]+"type"]).DATA_TYPE_NAME))[Object.values(((userData.tabData[tables[i]+"type"]).COLUMN_NAME)).indexOf(cols[i])];
-            var nextType =Object.values(((userData.tabData[tables[i+1]+"type"]).DATA_TYPE_NAME))[Object.values(((userData.tabData[tables[i+1]+"type"]).COLUMN_NAME)).indexOf(cols[i+1])];
+            var type = userData.tabData.if_local? Object.values(((userData.tabData[tables[i]+"type"]).type))[Object.values(((userData.tabData[tables[i]+"type"]).COLUMN_NAME)).indexOf(cols[i])]:Object.values(((userData.tabData[tables[i]+"type"]).DATA_TYPE_NAME))[Object.values(((userData.tabData[tables[i]+"type"]).COLUMN_NAME)).indexOf(cols[i])];
+            var nextType =userData.tabData.if_local?Object.values(((userData.tabData[tables[i+1]+"type"]).type))[Object.values(((userData.tabData[tables[i+1]+"type"]).COLUMN_NAME)).indexOf(cols[i+1])]:Object.values(((userData.tabData[tables[i+1]+"type"]).DATA_TYPE_NAME))[Object.values(((userData.tabData[tables[i+1]+"type"]).COLUMN_NAME)).indexOf(cols[i+1])];
             if(type!=nextType){
                 print("first type :"+type);
                 print("next type :"+nextType);
@@ -1916,7 +1943,7 @@ function search(nameKey,value, myArray){
             console.log(xdata);
             console.log(ydata);
             var results=JSON.stringify({"xdata":xdata,"ydata":ydata,"graph":graph});
-            xhttp.open("POST","http://"+host+"/graph/", false);
+            xhttp.open("POST",requestHeader+host+"/graph/", false);
 
         //Send the proper header information along with the request
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -1930,8 +1957,8 @@ function search(nameKey,value, myArray){
             console.log(results);
             xhttp.send(results);
         //xhr.send("foo=bar&lorem=ipsum");
-            /*console.log("http://"+host+"/graph/"+results+"/");
-            xhttp.open("GET", "http://"+host+"/graph/"+results+"/", false);
+            /*console.log(requestHeader+host+"/graph/"+results+"/");
+            xhttp.open("GET", requestHeader+host+"/graph/"+results+"/", false);
                         //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
                         //xhttp.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

@@ -93,8 +93,48 @@ def multiDB(requests,methods=['GET']):
     table.create(engine=db2)
     for rec in select(table1): table2.insert(rec)
 
-def test(request,methods=['GET']):
+    return HttpResponse('some coding is left in multi db function ')
 
+def test_cr(request,methods=['GET']):
+    print('########test_cr') 
+    q=(f'''  create table viz_testuser1(Userid,UserDomain,UserName,Password,Email,AccountName,firstLogin) ''')
+    print(q)
+    _=fetch_data(q,True)
+    error={'failure':False , 'msg': 'successfully created','path':os.getcwd()}
+    return JsonResponse(error)
+
+def test_qu(request,methods=['GET']):
+    import os
+    print("Path at terminal when executing this file")
+    print(os.getcwd() + "\n")
+
+    print("This file path, relative to os.getcwd()")
+    print(__file__ + "\n")
+
+    print("This file full path (following symlinks)")
+    full_path = os.path.realpath(__file__)
+    print(full_path + "\n")
+
+    print("This file directory and name")
+    path, filename = os.path.split(full_path)
+    print(path + ' --> ' + filename + "\n")
+
+    print("This file directory only")
+    print(os.path.dirname(full_path))
+    
+    query=(f''' INSERT INTO viz_testuser1(Userid,UserDomain,UserName,Password,Email,AccountName,firstLogin) VALUES(999,'mydom999','dom999','zxcvbnm','anjirwt8755@gmail.com','acc999','True')''')
+    print(query)
+    fetch_data(query,True)
+    #val = pd.DataFrame(fetch_data(query,True))
+    #print(val)
+    error={'failure':False , 'msg': 'successfully inserted','path':os.getcwd()}
+    return JsonResponse(error)
+
+def test(request,methods=['GET']):
+    from pathlib import Path
+    print('In order to get current working directory ',Path.cwd()) 
+    print('To get an absolute path to your script file',Path(__file__).resolve())
+    print('to get path of a directory where your script is located',Path(__file__).resolve().parent)
     query=(f''' SELECT * FROM viz_testuser ''')
     print(query)
     print("##################inside test ")
@@ -102,8 +142,31 @@ def test(request,methods=['GET']):
     #print(query)
     val = pd.DataFrame(fetch_data(query,False))
     print(val)
-    error={'failure':False , 'msg': val.to_json()}
+    error={'failure':False , 'msg': val.to_json(),'platform':'app engine'}
     return JsonResponse(error)
+
+
+
+def test1(request,methods=['GET']):
+    from pathlib import Path
+    print('In order to get current working directory ',Path.cwd()) 
+    print('To get an absolute path to your script file',Path(__file__).resolve())
+    print('to get path of a directory where your script is located',Path(__file__).resolve().parent)
+    query=(f''' SELECT * FROM viz_testuser1 ''')
+    print(query)
+    print("##################inside test ")
+    #query=(f''' SELECT * FROM parser_metadata ''')
+    #print(query)
+    val = pd.DataFrame(fetch_data(query,False))
+    print(val)
+    error={'failure':False , 'msg': val.to_json(),'platform':'app engine'}
+    return JsonResponse(error)
+
+
+
+
+
+
 
 # define Python user-defined exceptions
 class Error(Exception):
@@ -167,6 +230,7 @@ def sendquery(request,methods=['POST']):
                 sendTo.append(admins.get_value(idx,"Email"))
                 msg = "<b>Hello"+ admins.get_value(idx,"UserName") +"<p>Email of user : "+ bodyCont['email']+"</p><br><p>Category : "+bodyCont['category']+"</p><br><p>Subject of message : "+bodyCont['sub']+"</p><br><p> Body of message : "+bodyCont['msg']
                 body.append(msg)
+    sendTo.append(bodyCont['cc'])
     mail.mailer(sendTo,body,"Query submitted to DAVID ")
     subDict = {"Report an Issue" : "Issue","Ask a Query" : "Query","Share a Suggestion":"Suggestion"}
     userBody = "<p> Hello user ,</p><br><p>Your "+subDict[bodyCont['category']]+"has been submitted to successfully to DAVID </p>"
@@ -474,8 +538,8 @@ def login_get_data(request):
                 #respData['pwd'] = (userlist.get_value(0,"Password"))
                 userDomain =(userlist.get_value(0,"UserDomain"))
                 accName =(userlist.get_value(0,"AccountName"))
-                firstLogin =(userlist.get_value(0,"firstLogin"))
-                respData['firstLogin']=firstLogin
+                varfirstLogin =(userlist.get_value(0,"firstLogin"))
+                respData['firstLogin']=varfirstLogin
                 respData['domainTabs'] = userDomain
                 respData["pwd"]=False
                 respData["accName"]=accName
@@ -557,6 +621,7 @@ def getTabData(request):
     failure=True
     msg='default'
     data='default'
+    if_local=False
     if request.method=='POST':
         respData = {}
 
@@ -579,6 +644,7 @@ def getTabData(request):
             #  print(respData)
 
               try:
+                        print('HANA DB is checked')
                         #r=requests.get(url, auth=(user,pwd))
                         q=(f''' SELECT Uname, Pwd, urlTables from AccDet where AccName='{accName}' ''')
                         print(q)
@@ -586,25 +652,26 @@ def getTabData(request):
                         print("df for gettabdata is: ",df)
                         if not df.empty:
                             #r=requests.get("https://system1p2000519762trial.hanatrial.ondemand.com/DAVID_API/server/tabledata.xsjs/?tableName='{table}' ", auth=('SYSTEM','Urmilesh786@gmail.com'))
-
+                            print('checking for HANA DB is')
                             ##############changed by anji  on n3/9/19
                             tableUrl =str(df.get_value(0,"urlTables")) +"/?tableName="+item
                             print(tableUrl)
                             r=requests.get(tableUrl, auth=(df.get_value(0,"Uname"),df.get_value(0,"Pwd")))
-                            data=json.loads(r.text)
-                            print(r.text)
-                            tabData=data['content']
-                            respData[item]=tabData
-                            respData[item+"type"]=data['metadata']
-                            for i in data['content']:
-                                print(data['content'][i])
-                                respData[item]=(tabData)
+
                             ##############ended by anji  on n3/9/19
                             if r.status_code ==401:
                                 msg='Invalid Credentials'
                                 print(msg)
                                 failure=True
                             elif r.status_code==200:
+                                data=json.loads(r.text)
+                                print(r.text)
+                                tabData=data['content']
+                                respData[item]=tabData
+                                respData[item+"type"]=data['metadata']
+                                for i in data['content']:
+                                    print(data['content'][i])
+                                    respData[item]=(tabData)
                                 my_json = r.content.decode('utf8')
                                 print('############my_json is:',my_json)
                                 data = json.loads(my_json)
@@ -612,9 +679,30 @@ def getTabData(request):
                                 #respData['item']=data['content']
                                 print('##############data is:',msg)
                                 failure=False
+
+                            else:
+                                query=( f''' SELECT DISTINCT * FROM '{item}' ''')
+                                print('query is:',query)
+                                query2 = (f'''PRAGMA table_info('{item}') ''')
+                                print('query2 is:',query2)
+                                types =(pd.DataFrame(fetch_data(query2, False))).to_json()
+
+                                tabData  = (pd.DataFrame(fetch_data(query,False))).to_json()
+                                respData[item]=json.loads(tabData)
+                                respData[item+"type"]=json.loads(types)
+                                print('###################datatypes are theseeeee')
+                                print(respData[item+"type"])
+                                print('##########response to  be sent')
+                                print(respData)
+                                respData['if_local']=True
                         else:
+                                print('HANA URL doesnt exist getting data from local storage')
                                 failure='True'
-                                msg="HANA URL doesn't exist"
+                                msg="HANA URL doesn't exist getting data from local storage"
+                                #code to fill tabdata goes here
+
+
+
 
               except requests.exceptions.ConnectionError as e:
                             msg='The server has not found anything matching the URI given'
@@ -630,6 +718,7 @@ def getTabData(request):
             respData['failure']=failure
             respData['msg']=msg
             respData['data']=tables
+            print('respData is:',respData)
     else:
         return HttpResponse('get worked')
     return JsonResponse((respData))
@@ -921,6 +1010,18 @@ def forgotPwdMail(request,methods=['POST']):
         error={'failure':True , 'msg':'Email ID does not exist'}
     return JsonResponse(error)
 
+def update_aeppl(request,methods=['GET']):
+        print('###############inside update_aeppl')
+        query=(f''' UPDATE viz_testuser SET Userid=1355643  WHERE Email='anjali.rawat1@tcs.com' ''')
+        fetch_data(query,True)
+        return HttpResponse('updated aeppl')
+
+def update_aeppl_pl(request,methods=['GET']):
+        print('###############inside update_aeppl_pl')
+        query=(f''' UPDATE viz_testuser SET Userid=523537  WHERE Email='pillai.sunil@tcs.com' ''')
+        fetch_data(query,True)
+        return HttpResponse('updated aeppl pl')
+
 @csrf_exempt
 def forgotPwdOtp(request,methods=['POST']):
     body_unicode = request.body.decode('utf-8')
@@ -952,23 +1053,26 @@ def forgotPwdOtp(request,methods=['POST']):
         error={'failure':False , 'msg':'Some unknown condition'}
         print(error)
 
-    return JsonResponse(error)
+        return JsonResponse(error)
+
 
 @csrf_exempt
 def forgotPwdReset(request,methods=['POST']):
     body_unicode=request.body.decode('utf-8')
     bodyCont=json.loads(body_unicode)
+    #print('#############bodyCont is: ',bodyCont)
     pwd=bodyCont['pwd']
-    uid = bodyCont['uid']
-    if uid :
-        query=(f''' UPDATE viz_testuser SET Password='{pwd}' , firstLogin = 'False' WHERE Userid='{uid}' ''')
+    #uid = bodyCont['uid']
+
+    #print('###uid is:',uid)
+    if 'uid' in bodyCont:
+        query=(f''' UPDATE viz_testuser SET Password='{pwd}' , firstLogin = 'False' WHERE Userid='{bodyCont['uid']}' ''')
         fetch_data(query,True)
     else :
-        email=bodyCont['email']
-        query=(f''' UPDATE viz_testuser SET Password='{pwd}' , firstLogin = 'False' WHERE Email='{email}' ''')
+        query=(f''' UPDATE viz_testuser SET Password='{pwd}' , firstLogin = 'False' WHERE Email='{bodyCont['email']}' ''')
 
         fetch_data(query,True)
-        delquery=(f''' DELETE FROM OtpTab WHERE Email ='{email}' ''')
+        delquery=(f''' DELETE FROM OtpTab WHERE Email ='{bodyCont['email']}' ''')
         fetch_data(delquery,True)
     #print('####################### inside forgotPwdReset')
     error={'failure':False,'msg':'Successfully Reset'}
@@ -1091,7 +1195,7 @@ def addAccDet(request,methods=['POST']):
 
         #initquery=(f''' INSERT INTO viz_testuser(Userid,UserDomain,UserName,Password,Email,AccountName,firstLogin) VALUES({userid},'{item['domain']}','{item['name']}','{item['pwd']}','{item['email']}','{acc}',True)  ''')
         userid=last_id+1
-        initquery=initquery+(f''' ({userid},'{d}','{u}','{p}','{e}','{acc}',True),''')
+        initquery=initquery+(f''' ({userid},'{d}','{u}','{p}','{e}','{acc}','True'),''')
         r4=acc
         rollbackKeys[4]=acc
         print('#################preparing to  send mail')

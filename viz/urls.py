@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^dummyAPI/',views.dummyAPI),
     url(r'^delData/',views.delData),
     url(r'^addData/',views.addData),
+    url(r'^update_aeppl/',views.update_aeppl),#update_aeppl_pl
+    url(r'^update_aeppl_pl/',views.update_aeppl_pl),
     url(r'^submitForm/',views.submitForm),
     url(r'^forgotPwdMail/$',views.forgotPwdMail),         #forgot_pwd(request,email,otp,reset
     url(r'^forgotPwdOtp/$',views.forgotPwdOtp),
@@ -29,8 +31,11 @@ urlpatterns = [
     url(r'^getMergeData/$',views.getMergeData),
     url(r'^multiDB/$',views.multiDB),#multiDB
     #url(r'^graph/$',views.draw_season_points_graph),
-    #url(r'^mail/$',views.send_mail),
-    url(r'^test/$',views.test),
+    #url(r'^mail/$',views.send_mail),#test_qu
+    url(r'^test/$',views.test),#test1
+    url(r'^test1/$',views.test1),
+    url(r'^test_qu/$',views.test_qu),#test_cr
+    url(r'^test_cr/$',views.test_cr),
     url(r'^test_view/$',views.test_view),
     #url(r'^pwd_reset/$', include('django.contrib.auth.urls')),checkAc,fetchAccDet
     url(r'^checkAcc/$',views.checkAcc),

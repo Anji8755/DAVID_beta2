@@ -97,6 +97,10 @@ def parser():
                         	html.Label(" Email : ",style={"width":"40%"}),
                         	dcc.Input(id='msg_mail',placeholder='Enter Email...'),
                         	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
+                html.Div([
+                        	html.Label(" Send Copy : ",style={"width":"40%"}),
+                        	dcc.Input(id='msg_cc',placeholder='Enter Email...'),
+                        	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
                 html.P("* You'll receive a confirmation mail on this email . We promise not to spam you , !",style={"color":"#fff","font-size":"12px","margin-left":"105px"}),
                 html.Button(children="SEND" ,className="btn send "),
                 html.Button(children="CLOSE" ,className="btn closeModal ")
@@ -316,7 +320,7 @@ def login():
                     html.H6(children="Data Analytics Visualizaton & Insights Dashboard"),
                     html.Button(children="START" ,className="btn rounded login")
                 ],className="greeting"),
-                html.Div([html.H2("Be one of the first few to experience something awesome"),html.H4("Sign up and experience the all new Beta version")],className="betaPromo"),
+                html.Div([html.H6("Please use TCS employee-id here"),html.H2("Be one of the first few to experience something awesome"),html.H4("Sign up and experience the all new Beta version")],className="betaPromo"),
                             html.Div([html.H3(children="Connect With DAVID"),
                     html.Div([
                         html.Div([
@@ -340,6 +344,10 @@ def login():
                         html.Div([
                         	html.Label(" Email : ",style={"width":"40%"}),
                         	dcc.Input(id='msg_mail',placeholder='Enter Email...'),
+                        	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
+                        html.Div([
+                        	html.Label(" Send Copy : ",style={"width":"40%"}),
+                        	dcc.Input(id='msg_cc',placeholder='Enter Email...'),
                         	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
                         	html.P("* You'll receive a confirmation mail on this email . We promise not to spam you , !",style={"color":"#fff","font-size":"12px","margin-left":"105px"}),
 
@@ -410,6 +418,10 @@ def dash():
                         html.Div([
                         	html.Label(" Email : ",style={"width":"40%"}),
                         	dcc.Input(id='msg_mail',placeholder='Enter Email...'),
+                        	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
+                        html.Div([
+                        	html.Label(" Send Copy : ",style={"width":"40%"}),
+                        	dcc.Input(id='msg_cc',placeholder='Enter Email...'),
                         	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
                         	html.P("* You'll receive a confirmation mail on this email . We promise not to spam you , !",style={"color":"#fff","font-size":"12px","margin-left":"105px"}),
 
@@ -570,6 +582,10 @@ def about():
                 html.Div([
                         	html.Label(" Email : ",style={"width":"40%"}),
                         	dcc.Input(id='msg_mail',placeholder='Enter Email...'),
+                        	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
+                html.Div([
+                        	html.Label(" Send Copy : ",style={"width":"40%"}),
+                        	dcc.Input(id='msg_cc',placeholder='Enter Email...'),
                         	],style={"width":"100%","padding":"10px 0px","display":"inline-flex"}),
                 html.P("* You'll receive a confirmation mail on this email . We promise not to spam you , !",style={"color":"#fff","font-size":"12px","margin-left":"105px"}),
                 html.Button(children="SEND" ,className="btn send "),
